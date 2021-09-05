@@ -12,7 +12,7 @@ import Logo from "./Images/logo.png";
 // Custom CSS
 const useStyles = makeStyles({
   page: {
-    backgroundColor: "#333333",
+    backgroundColor: "#ccc",
     width: "100%",
     padding: 20,
     height: "100vh",
@@ -39,9 +39,6 @@ const useStyles = makeStyles({
   },
   active: {
     color: "#6ca6c5",
-  },
-  orange: {
-    backgroundColor: "#3C3C3C",
   },
 });
 
