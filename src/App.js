@@ -7,6 +7,8 @@ import Nurses from "./Pages/Nurses";
 import Facilities from "./Pages/Facilities";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
+import Login from "./Pages/Login";
+import Register from "./Pages/Register";
 
 const theme = createTheme({
   palette: {
@@ -32,17 +34,23 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
-            <Route path="/Nurses">
+            <Route path="/nurses">
               <Nurses />
             </Route>
-            <Route path="/Facilities">
+            <Route path="/facilities">
               <Facilities />
             </Route>
-            <Route path="/About-us">
+            <Route path="/about">
               <About />
             </Route>
-            <Route path="/Contact">
+            <Route path="/contact">
               <Contact />
+            </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <Route path="/register">
+              <Register />
             </Route>
           </Switch>
         </Layout>

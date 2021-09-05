@@ -1,7 +1,7 @@
 import React from "react";
 
 const Facilities = () => {
-  return <div></div>;
+  return <div>Facilities</div>;
 };
 
 export default Facilities;

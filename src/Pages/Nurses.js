@@ -1,7 +1,7 @@
 import React from "react";
 
 const Nurses = () => {
-  return <div></div>;
+  return <div>Nurses</div>;
 };
 
 export default Nurses;

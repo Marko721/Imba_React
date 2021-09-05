@@ -7,6 +7,7 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import Grid from "@material-ui/core/Grid";
+import { useHistory, useLocation } from "react-router";
 
 // Custom CSS
 const useStyles = makeStyles({
@@ -25,27 +26,24 @@ const useStyles = makeStyles({
     maxWidth: 160,
   },
   listitems: {
-    alignContent: "center",
+    display: "flex",
   },
   listitemleft: {
     display: "flex",
     flexDirection: "row",
-    margin: 0,
-    padding: 0,
     alignItems: "flex-start",
   },
   listitemright: {
     display: "flex",
     flexDirection: "row",
-    margin: 0,
-    padding: 0,
-    alignItems: "flex-end",
   },
 });
 
 // MENU LIST ITEMS
 const Layout = ({ children }) => {
   const classes = useStyles();
+  const history = useHistory();
+  const location = useLocation();
 
   const menuItemsLeft = [
     {
@@ -54,26 +52,26 @@ const Layout = ({ children }) => {
     },
     {
       text: "Nurses",
-      path: "/create",
+      path: "/nurses",
     },
     {
       text: "Facilities",
-      path: "/create",
+      path: "/facilities",
     },
     {
       text: "About",
-      path: "/create",
+      path: "/about",
     },
     {
       text: "Contact",
-      path: "/create",
+      path: "/contact",
     },
   ];
 
   const menuItemsRight = [
     {
       text: "Log in",
-      path: "/log_in",
+      path: "/login",
     },
     {
       text: "Register",
@@ -84,22 +82,21 @@ const Layout = ({ children }) => {
   return (
     <div>
       {/* NAVBAR */}
-      <AppBar position="static" color="primary" elevation="0">
-        <Grid className={classes.listitems}>
-          <Toolbar className={classes.listitems}>
-            {/* LOGO */}
-            <img src="./Images/logo.png" alt="logo" className={classes.logo} />
-
+      <AppBar position="static" color="primary">
+        <Toolbar>
+          {/* LOGO */}
+          <img src="./Images/logo.png" alt="logo" className={classes.logo} />
+          <Grid className={classes.listitems}>
             {/* LEFT NAVIGATION */}
             <List className={classes.listitemleft}>
               {menuItemsLeft.map((item) => (
                 <ListItem
                   key={item.text}
                   button
-                  // onClick={() => history.push(item.path)}
-                  // className={
-                  //   location.pathname == item.path ? classes.active : null
-                  // }
+                  onClick={() => history.push(item.path)}
+                  className={
+                    location.pathname == item.path ? classes.active : null
+                  }
                 >
                   <ListItemText primary={item.text}></ListItemText>
                 </ListItem>
@@ -112,17 +109,17 @@ const Layout = ({ children }) => {
                 <ListItem
                   key={item.text}
                   button
-                  // onClick={() => history.push(item.path)}
-                  // className={
-                  //   location.pathname == item.path ? classes.active : null
-                  // }
+                  onClick={() => history.push(item.path)}
+                  className={
+                    location.pathname == item.path ? classes.active : null
+                  }
                 >
                   <ListItemText primary={item.text}></ListItemText>
                 </ListItem>
               ))}
             </List>
-          </Toolbar>
-        </Grid>
+          </Grid>
+        </Toolbar>
       </AppBar>
 
       {/* Content */}
