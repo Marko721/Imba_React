@@ -8,6 +8,7 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import { useHistory, useLocation } from "react-router";
 import Logo from "./Images/logo.png";
+import SvgIcon from "@material-ui/core/SvgIcon";
 
 // Custom CSS
 const useStyles = makeStyles({
@@ -36,6 +37,12 @@ const useStyles = makeStyles({
     display: "flex",
     flexDirection: "row",
     marginLeft: "auto",
+  },
+  active: {
+    color: "#6ca6c5",
+  },
+  orange: {
+    backgroundColor: "#3C3C3C",
   },
 });
 
@@ -94,11 +101,13 @@ const Layout = ({ children }) => {
                 key={item.text}
                 button
                 onClick={() => history.push(item.path)}
-                className={
-                  location.pathname == item.path ? classes.active : null
-                }
               >
-                <ListItemText primary={item.text}></ListItemText>
+                <ListItemText
+                  className={
+                    location.pathname == item.path ? classes.active : null
+                  }
+                  primary={item.text}
+                ></ListItemText>
               </ListItem>
             ))}
           </List>
@@ -113,6 +122,8 @@ const Layout = ({ children }) => {
                   location.pathname == item.path ? classes.active : null
                 }
               >
+                {/* {item.path == "/login" ? <HomeIcon color="secondary" /> : null} */}
+
                 <ListItemText primary={item.text}></ListItemText>
               </ListItem>
             ))}
