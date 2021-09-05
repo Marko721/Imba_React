@@ -1,4 +1,4 @@
-import { Avatar, makeStyles, Paper, Typography } from "@material-ui/core";
+import { makeStyles, Paper, Typography } from "@material-ui/core";
 import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -8,12 +8,11 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import { useHistory, useLocation } from "react-router";
 import Logo from "./Images/logo.png";
-import SvgIcon from "@material-ui/core/SvgIcon";
 
 // Custom CSS
 const useStyles = makeStyles({
   page: {
-    backgroundColor: "#ccc",
+    backgroundColor: "#333333",
     width: "100%",
     padding: 20,
     height: "100vh",
