@@ -24,11 +24,13 @@ const useStyles = makeStyles({
   },
   logo: {
     maxWidth: 120,
+    cursor: "pointer",
   },
   listitemleft: {
     display: "flex",
     flexDirection: "row",
     alignItems: "flex-start",
+    marginLeft: 30,
   },
   listitemright: {
     display: "flex",
@@ -44,10 +46,6 @@ const Layout = ({ children }) => {
   const location = useLocation();
 
   const menuItemsLeft = [
-    {
-      text: "Home",
-      path: "/",
-    },
     {
       text: "Nurses",
       path: "/nurses",
@@ -83,7 +81,12 @@ const Layout = ({ children }) => {
       <AppBar position="static" color="primary">
         <Toolbar>
           {/* LOGO */}
-          <img src={Logo} alt="logo" className={classes.logo} />
+          <img
+            onClick={() => history.push("/")}
+            src={Logo}
+            alt="logo"
+            className={classes.logo}
+          />
           {/* LEFT NAVIGATION */}
           <List className={classes.listitemleft}>
             {menuItemsLeft.map((item) => (
