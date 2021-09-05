@@ -2,8 +2,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { createTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/core/styles";
 import Layout from "./Components/Layout";
-import Header from "./Components/Header";
-import Footer from "./Components/Footer";
 import Home from "./Pages/Home";
 import Nurses from "./Pages/Nurses";
 import Facilities from "./Pages/Facilities";
