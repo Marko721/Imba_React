@@ -1,4 +1,4 @@
-import { makeStyles, Paper, Typography } from "@material-ui/core";
+import { Avatar, makeStyles, Paper, Typography } from "@material-ui/core";
 import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -6,8 +6,8 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import Grid from "@material-ui/core/Grid";
 import { useHistory, useLocation } from "react-router";
+import Logo from "./Images/logo.png";
 
 // Custom CSS
 const useStyles = makeStyles({
@@ -23,7 +23,7 @@ const useStyles = makeStyles({
     padding: 0,
   },
   logo: {
-    maxWidth: 160,
+    maxWidth: 120,
   },
   listitemleft: {
     display: "flex",
@@ -83,7 +83,7 @@ const Layout = ({ children }) => {
       <AppBar position="static" color="primary">
         <Toolbar>
           {/* LOGO */}
-          <img src="./Images/logo.png" alt="logo" className={classes.logo} />
+          <img src={Logo} alt="logo" className={classes.logo} />
           {/* LEFT NAVIGATION */}
           <List className={classes.listitemleft}>
             {menuItemsLeft.map((item) => (
@@ -99,7 +99,6 @@ const Layout = ({ children }) => {
               </ListItem>
             ))}
           </List>
-
           {/* RIGHT NAVIGATION */}
           <List className={classes.listitemright}>
             {menuItemsRight.map((item) => (
