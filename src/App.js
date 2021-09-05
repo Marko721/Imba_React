@@ -13,7 +13,7 @@ import Register from "./Pages/Register";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#ff8300",
+      main: "#fff",
     },
   },
   typography: {

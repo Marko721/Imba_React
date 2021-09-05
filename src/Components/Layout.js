@@ -25,9 +25,6 @@ const useStyles = makeStyles({
   logo: {
     maxWidth: 160,
   },
-  listitems: {
-    display: "flex",
-  },
   listitemleft: {
     display: "flex",
     flexDirection: "row",
@@ -36,6 +33,7 @@ const useStyles = makeStyles({
   listitemright: {
     display: "flex",
     flexDirection: "row",
+    marginLeft: "auto",
   },
 });
 
@@ -86,39 +84,37 @@ const Layout = ({ children }) => {
         <Toolbar>
           {/* LOGO */}
           <img src="./Images/logo.png" alt="logo" className={classes.logo} />
-          <Grid className={classes.listitems}>
-            {/* LEFT NAVIGATION */}
-            <List className={classes.listitemleft}>
-              {menuItemsLeft.map((item) => (
-                <ListItem
-                  key={item.text}
-                  button
-                  onClick={() => history.push(item.path)}
-                  className={
-                    location.pathname == item.path ? classes.active : null
-                  }
-                >
-                  <ListItemText primary={item.text}></ListItemText>
-                </ListItem>
-              ))}
-            </List>
+          {/* LEFT NAVIGATION */}
+          <List className={classes.listitemleft}>
+            {menuItemsLeft.map((item) => (
+              <ListItem
+                key={item.text}
+                button
+                onClick={() => history.push(item.path)}
+                className={
+                  location.pathname == item.path ? classes.active : null
+                }
+              >
+                <ListItemText primary={item.text}></ListItemText>
+              </ListItem>
+            ))}
+          </List>
 
-            {/* RIGHT NAVIGATION */}
-            <List className={classes.listitemright}>
-              {menuItemsRight.map((item) => (
-                <ListItem
-                  key={item.text}
-                  button
-                  onClick={() => history.push(item.path)}
-                  className={
-                    location.pathname == item.path ? classes.active : null
-                  }
-                >
-                  <ListItemText primary={item.text}></ListItemText>
-                </ListItem>
-              ))}
-            </List>
-          </Grid>
+          {/* RIGHT NAVIGATION */}
+          <List className={classes.listitemright}>
+            {menuItemsRight.map((item) => (
+              <ListItem
+                key={item.text}
+                button
+                onClick={() => history.push(item.path)}
+                className={
+                  location.pathname == item.path ? classes.active : null
+                }
+              >
+                <ListItemText primary={item.text}></ListItemText>
+              </ListItem>
+            ))}
+          </List>
         </Toolbar>
       </AppBar>
 
