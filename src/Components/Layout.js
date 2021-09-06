@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => {
       marginLeft: "auto",
     },
     drawer: {
-      width: 150,
+      width: 200,
       textAlign: "center",
     },
 
