@@ -16,24 +16,12 @@ import MenuIcon from "@material-ui/icons/Menu";
 
 const useStyles = makeStyles((theme) => {
   return {
-    page: {
-      // backgroundColor: "#030303",
-      width: "100vw",
-      padding: 20,
-      height: "100vh",
-    },
+    // NAVBAR CSS
     appbar: {
       width: "100vw",
       margin: 0,
       padding: 0,
       backgroundColor: "#fff",
-    },
-    hamburgerIcon: {
-      marginLeft: "auto",
-    },
-    drawer: {
-      width: 150,
-      textAlign: "center",
     },
     logo: {
       maxWidth: 120,
@@ -52,6 +40,20 @@ const useStyles = makeStyles((theme) => {
     },
     active: {
       color: "#6ca6c5",
+    },
+    hamburgerIcon: {
+      marginLeft: "auto",
+    },
+    drawer: {
+      width: 150,
+      textAlign: "center",
+    },
+
+    // BODY CSS
+    page: {
+      // backgroundColor: "#030303",
+      // width: "80vw",
+      padding: 20,
     },
   };
 });
@@ -76,8 +78,8 @@ const Layout = ({ children }) => {
         ? setState((prevState) => ({ ...prevState, mobileView: true }))
         : setState((prevState) => ({ ...prevState, mobileView: false }));
     };
-
     setResponsiveness();
+
     window.addEventListener("resize", () => setResponsiveness());
 
     return () => {
@@ -104,7 +106,6 @@ const Layout = ({ children }) => {
       path: "/contact",
     },
   ];
-
   const menuItemsRight = [
     {
       text: "Log in",
@@ -248,24 +249,6 @@ const Layout = ({ children }) => {
       </Toolbar>
     );
   };
-
-  // const getDrawerChoices = () => {
-  //   return headersData.map(({ label, href }) => {
-  //     return (
-  //       <Link
-  //         {...{
-  //           component: RouterLink,
-  //           to: href,
-  //           color: "inherit",
-  //           style: { textDecoration: "none" },
-  //           key: label,
-  //         }}
-  //       >
-  //         <MenuItem>{label}</MenuItem>
-  //       </Link>
-  //     );
-  //   });
-  // };
 
   return (
     <div>
