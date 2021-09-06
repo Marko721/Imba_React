@@ -13,7 +13,6 @@ import Logo from "./Images/logo.png";
 import MenuIcon from "@material-ui/icons/Menu";
 
 // Custom CSS
-
 const useStyles = makeStyles((theme) => {
   return {
     // NAVBAR CSS
@@ -171,6 +170,7 @@ const Layout = ({ children }) => {
     const handleDrawerClose = () =>
       setState((prevState) => ({ ...prevState, drawerOpen: false }));
 
+    // Close the drawer when link is clicked
     const pathAndClose = (path) => {
       history.push(path);
       handleDrawerClose();
@@ -190,7 +190,6 @@ const Layout = ({ children }) => {
             color="inherit"
             aria-label="menu"
             aria-haspopup="true"
-
             // {...{
             //   edge: "end",
             //   color: "inherit",
@@ -205,11 +204,15 @@ const Layout = ({ children }) => {
 
         <Drawer
           className={classes.drawerContainer}
-          {...{
-            anchor: "right",
-            open: drawerOpen,
-            onClose: handleDrawerClose,
-          }}
+          anchor="right"
+          open={drawerOpen}
+          onClose={handleDrawerClose}
+          // {...{
+          // anchor: "right",
+          // open: drawerOpen,
+          // onClose: handleDrawerClose,
+          //   }
+          // }
         >
           <List>
             {menuItemsLeft.map((item) => (
