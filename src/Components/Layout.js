@@ -171,6 +171,11 @@ const Layout = ({ children }) => {
     const handleDrawerClose = () =>
       setState((prevState) => ({ ...prevState, drawerOpen: false }));
 
+    const pathAndClose = (path) => {
+      history.push(path);
+      handleDrawerClose();
+    };
+
     return (
       <Toolbar>
         <img
@@ -212,7 +217,7 @@ const Layout = ({ children }) => {
                 className={classes.drawer}
                 key={item.text}
                 button
-                onClick={() => history.push(item.path)}
+                onClick={() => pathAndClose(item.path)}
               >
                 <ListItemText
                   className={
@@ -230,7 +235,7 @@ const Layout = ({ children }) => {
                 className={classes.drawer}
                 key={item.text}
                 button
-                onClick={() => history.push(item.path)}
+                onClick={() => pathAndClose(item.path)}
               >
                 {/* {item.path == "/login" ? <HomeIcon color="secondary" /> : null} */}
 
