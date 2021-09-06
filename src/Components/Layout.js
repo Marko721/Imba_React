@@ -13,6 +13,7 @@ import Logo from "./Images/logo.png";
 import MenuIcon from "@material-ui/icons/Menu";
 
 // Custom CSS
+
 const useStyles = makeStyles((theme) => {
   return {
     page: {
@@ -26,6 +27,13 @@ const useStyles = makeStyles((theme) => {
       margin: 0,
       padding: 0,
       backgroundColor: "#fff",
+    },
+    hamburgerIcon: {
+      marginLeft: "auto",
+    },
+    drawer: {
+      width: 150,
+      textAlign: "center",
     },
     logo: {
       maxWidth: 120,
@@ -170,24 +178,27 @@ const Layout = ({ children }) => {
           alt="logo"
           className={classes.logo}
         />
-        <IconButton
-          onClick={() => handleDrawerOpen()}
-          edgeEnd
-          color="inherit"
-          aria-label="menu"
-          aria-haspopup="true"
-          // {...{
-          //   edge: "end",
-          //   color: "inherit",
-          //   "aria-label": "menu",
-          //   "aria-haspopup": "true",
-          //   onClick: handleDrawerOpen,
-          // }}
-        >
-          <MenuIcon />
-        </IconButton>
+        <div className={classes.hamburgerIcon}>
+          <IconButton
+            onClick={() => handleDrawerOpen()}
+            color="inherit"
+            aria-label="menu"
+            aria-haspopup="true"
+
+            // {...{
+            //   edge: "end",
+            //   color: "inherit",
+            //   "aria-label": "menu",
+            //   "aria-haspopup": "true",
+            //   onClick: handleDrawerOpen,
+            // }}
+          >
+            <MenuIcon />
+          </IconButton>
+        </div>
 
         <Drawer
+          className={classes.drawerContainer}
           {...{
             anchor: "right",
             open: drawerOpen,
@@ -197,6 +208,7 @@ const Layout = ({ children }) => {
           <List>
             {menuItemsLeft.map((item) => (
               <ListItem
+                className={classes.drawer}
                 key={item.text}
                 button
                 onClick={() => history.push(item.path)}
@@ -214,16 +226,19 @@ const Layout = ({ children }) => {
           <List>
             {menuItemsRight.map((item) => (
               <ListItem
+                className={classes.drawer}
                 key={item.text}
                 button
                 onClick={() => history.push(item.path)}
-                className={
-                  location.pathname == item.path ? classes.active : null
-                }
               >
                 {/* {item.path == "/login" ? <HomeIcon color="secondary" /> : null} */}
 
-                <ListItemText primary={item.text}></ListItemText>
+                <ListItemText
+                  className={
+                    location.pathname == item.path ? classes.active : null
+                  }
+                  primary={item.text}
+                ></ListItemText>
               </ListItem>
             ))}
           </List>
