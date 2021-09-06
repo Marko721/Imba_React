@@ -1,4 +1,5 @@
 import { makeStyles, Paper, Typography } from "@material-ui/core";
+import { useState, useEffect } from "react";
 import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -6,48 +7,77 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
+import { IconButton, Drawer } from "@material-ui/core";
 import { useHistory, useLocation } from "react-router";
 import Logo from "./Images/logo.png";
+import MenuIcon from "@material-ui/icons/Menu";
 
 // Custom CSS
-const useStyles = makeStyles({
-  page: {
-    backgroundColor: "#ccc",
-    width: "100%",
-    padding: 20,
-    height: "100vh",
-  },
-  appbar: {
-    width: "100vw",
-    margin: 0,
-    padding: 0,
-  },
-  logo: {
-    maxWidth: 120,
-    cursor: "pointer",
-  },
-  listitemleft: {
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "flex-start",
-    marginLeft: 30,
-  },
-  listitemright: {
-    display: "flex",
-    flexDirection: "row",
-    marginLeft: "auto",
-  },
-  active: {
-    color: "#6ca6c5",
-  },
+const useStyles = makeStyles((theme) => {
+  return {
+    page: {
+      // backgroundColor: "#030303",
+      width: "100vw",
+      padding: 20,
+      height: "100vh",
+    },
+    appbar: {
+      width: "100vw",
+      margin: 0,
+      padding: 0,
+      backgroundColor: "#fff",
+    },
+    logo: {
+      maxWidth: 120,
+      cursor: "pointer",
+    },
+    listitemleft: {
+      display: "flex",
+      flexDirection: "row",
+      alignItems: "flex-start",
+      marginLeft: 30,
+    },
+    listitemright: {
+      display: "flex",
+      flexDirection: "row",
+      marginLeft: "auto",
+    },
+    active: {
+      color: "#6ca6c5",
+    },
+  };
 });
 
-// MENU LIST ITEMS
+// COMPONENT
 const Layout = ({ children }) => {
   const classes = useStyles();
   const history = useHistory();
   const location = useLocation();
 
+  // state for activating mobile navigation
+  const [state, setState] = useState({
+    mobileView: false,
+    drawerOpen: false,
+  });
+  const { mobileView, drawerOpen } = state;
+
+  // function that sets navigation
+  useEffect(() => {
+    const setResponsiveness = () => {
+      return window.innerWidth < 900
+        ? setState((prevState) => ({ ...prevState, mobileView: true }))
+        : setState((prevState) => ({ ...prevState, mobileView: false }));
+    };
+
+    setResponsiveness();
+    window.addEventListener("resize", () => setResponsiveness());
+
+    return () => {
+      window.removeEventListener("resize", () => setResponsiveness());
+    };
+  }, []);
+
+  // MENU LIST ITEMS
   const menuItemsLeft = [
     {
       text: "Nurses",
@@ -78,20 +108,93 @@ const Layout = ({ children }) => {
     },
   ];
 
-  return (
-    <div>
-      {/* NAVBAR */}
-      <AppBar position="static" color="primary">
-        <Toolbar>
-          {/* LOGO */}
-          <img
-            onClick={() => history.push("/")}
-            src={Logo}
-            alt="logo"
-            className={classes.logo}
-          />
-          {/* LEFT NAVIGATION */}
-          <List className={classes.listitemleft}>
+  // DESKTOP NAVIGATION VIEW
+  const displayDesktop = () => {
+    return (
+      <Toolbar>
+        {/* LOGO */}
+        <img
+          onClick={() => history.push("/")}
+          src={Logo}
+          alt="logo"
+          className={classes.logo}
+        />
+        {/* LEFT NAVIGATION */}
+        <List className={classes.listitemleft}>
+          {menuItemsLeft.map((item) => (
+            <ListItem
+              key={item.text}
+              button
+              onClick={() => history.push(item.path)}
+            >
+              <ListItemText
+                className={
+                  location.pathname == item.path ? classes.active : null
+                }
+                primary={item.text}
+              ></ListItemText>
+            </ListItem>
+          ))}
+        </List>
+        {/* RIGHT NAVIGATION */}
+        <List className={classes.listitemright}>
+          {menuItemsRight.map((item) => (
+            <ListItem
+              key={item.text}
+              button
+              onClick={() => history.push(item.path)}
+              className={location.pathname == item.path ? classes.active : null}
+            >
+              {/* {item.path == "/login" ? <HomeIcon color="secondary" /> : null} */}
+
+              <ListItemText primary={item.text}></ListItemText>
+            </ListItem>
+          ))}
+        </List>
+      </Toolbar>
+    );
+  };
+
+  // MOBILE NAVIGATION VIEW
+  const displayMobile = () => {
+    const handleDrawerOpen = () =>
+      setState((prevState) => ({ ...prevState, drawerOpen: true }));
+    const handleDrawerClose = () =>
+      setState((prevState) => ({ ...prevState, drawerOpen: false }));
+
+    return (
+      <Toolbar>
+        <img
+          onClick={() => history.push("/")}
+          src={Logo}
+          alt="logo"
+          className={classes.logo}
+        />
+        <IconButton
+          onClick={() => handleDrawerOpen()}
+          edgeEnd
+          color="inherit"
+          aria-label="menu"
+          aria-haspopup="true"
+          // {...{
+          //   edge: "end",
+          //   color: "inherit",
+          //   "aria-label": "menu",
+          //   "aria-haspopup": "true",
+          //   onClick: handleDrawerOpen,
+          // }}
+        >
+          <MenuIcon />
+        </IconButton>
+
+        <Drawer
+          {...{
+            anchor: "right",
+            open: drawerOpen,
+            onClose: handleDrawerClose,
+          }}
+        >
+          <List>
             {menuItemsLeft.map((item) => (
               <ListItem
                 key={item.text}
@@ -108,7 +211,7 @@ const Layout = ({ children }) => {
             ))}
           </List>
           {/* RIGHT NAVIGATION */}
-          <List className={classes.listitemright}>
+          <List>
             {menuItemsRight.map((item) => (
               <ListItem
                 key={item.text}
@@ -124,7 +227,36 @@ const Layout = ({ children }) => {
               </ListItem>
             ))}
           </List>
-        </Toolbar>
+        </Drawer>
+
+        {/* <div>{femmecubatorLogo}</div> */}
+      </Toolbar>
+    );
+  };
+
+  // const getDrawerChoices = () => {
+  //   return headersData.map(({ label, href }) => {
+  //     return (
+  //       <Link
+  //         {...{
+  //           component: RouterLink,
+  //           to: href,
+  //           color: "inherit",
+  //           style: { textDecoration: "none" },
+  //           key: label,
+  //         }}
+  //       >
+  //         <MenuItem>{label}</MenuItem>
+  //       </Link>
+  //     );
+  //   });
+  // };
+
+  return (
+    <div>
+      {/* NAVBAR */}
+      <AppBar position="static">
+        {mobileView ? displayMobile() : displayDesktop()}
       </AppBar>
 
       {/* Content */}
