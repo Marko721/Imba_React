@@ -18,12 +18,12 @@ const useStyles = makeStyles((theme) => {
     // NAVBAR CSS
     appbar: {
       width: "100vw",
-      margin: 0,
-      padding: 0,
-      backgroundColor: "#fff",
+      margin: "auto",
+      padding: 15,
+      // backgroundColor: "#fff",
     },
     logo: {
-      maxWidth: 120,
+      maxWidth: 160,
       cursor: "pointer",
     },
     listitemleft: {
@@ -73,7 +73,7 @@ const Layout = ({ children }) => {
   // function that sets navigation
   useEffect(() => {
     const setResponsiveness = () => {
-      return window.innerWidth < 900
+      return window.innerWidth < 800
         ? setState((prevState) => ({ ...prevState, mobileView: true }))
         : setState((prevState) => ({ ...prevState, mobileView: false }));
     };
@@ -261,7 +261,7 @@ const Layout = ({ children }) => {
   return (
     <div>
       {/* NAVBAR */}
-      <AppBar position="static">
+      <AppBar position="static" className={classes.appbar}>
         {mobileView ? displayMobile() : displayDesktop()}
       </AppBar>
 
