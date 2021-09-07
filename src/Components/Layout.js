@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => {
     page: {
       // backgroundColor: "#030303",
       // width: "80vw",
-      padding: 20,
+      // padding: 5,
     },
   };
 });
