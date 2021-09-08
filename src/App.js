@@ -9,6 +9,7 @@ import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
+import Testing from "./Pages/Testing";
 
 const theme = createTheme({
   palette: {
@@ -65,6 +66,9 @@ function App() {
             </Route>
             <Route path="/register">
               <Register />
+            </Route>
+            <Route path="/testing">
+              <Testing />
             </Route>
           </Switch>
         </Layout>

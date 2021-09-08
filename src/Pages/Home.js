@@ -42,9 +42,12 @@ const useStyles = makeStyles((theme) => {
     bannerButtonIcon: {
       marginLeft: 10,
     },
-  };
 
-  // JOBS SETION
+    // JOBS SETION
+    root: {
+      flexGrow: 1,
+    },
+  };
 });
 
 const Home = (props) => {
@@ -89,10 +92,11 @@ const Home = (props) => {
               <Typography color="primary" variant="h2" paragraph>
                 For Nurses
               </Typography>
-              <Typography color="primary" gutterBottom>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum,
-                fugiat!
+              <Typography color="primary">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
               </Typography>
+              <Typography color="primary">Harum, fugiat!</Typography>
+
               <Button
                 className={classes.bannerButton}
                 size="large"
@@ -117,6 +121,12 @@ const Home = (props) => {
       <Typography variant="h4" align="center" style={{ marginTop: "50px" }}>
         Check some of the available jobs
       </Typography>
+
+      <Grid container spacing={3}>
+        <Grid item xs={6} sm={3}>
+          <Paper className={classes.paper}>xs=6 sm=3</Paper>
+        </Grid>
+      </Grid>
     </div>
   );
 };
