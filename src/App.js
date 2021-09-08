@@ -29,14 +29,14 @@ const theme = createTheme({
     fontWeightMedium: 600,
     fontWeightBold: 700,
     h2: {
-      // fontSize: "4.2rem",
+      fontSize: "3.2rem",
       fontFamily: "Roboto",
       fontWeight: "bold",
       textTransform: "uppercase",
     },
     h4: {
       textTransform: "uppercase",
-      fontSize: "1.5rem",
+      fontSize: "1.2rem",
     },
   },
 });
