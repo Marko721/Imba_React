@@ -214,7 +214,9 @@ const Layout = ({ children }) => {
           //   }
           // }
         >
+          {/* TOP NAVIGATION */}
           <List>
+            <ListItemIcon></ListItemIcon>
             {menuItemsLeft.map((item) => (
               <ListItem
                 className={classes.drawer}
@@ -231,7 +233,7 @@ const Layout = ({ children }) => {
               </ListItem>
             ))}
           </List>
-          {/* RIGHT NAVIGATION */}
+          {/* BOTTOM NAVIGATION */}
           <List>
             {menuItemsRight.map((item) => (
               <ListItem
