@@ -13,13 +13,13 @@ import Register from "./Pages/Register";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#fff",
+      main: "#fff", // white
     },
     secondary: {
-      main: "#458BAE",
+      main: "#458BAE", // blue
     },
     text: {
-      primary: "#676767",
+      primary: "#676767", // gray
     },
   },
   typography: {
@@ -33,6 +33,10 @@ const theme = createTheme({
       fontFamily: "Roboto",
       fontWeight: "bold",
       textTransform: "uppercase",
+    },
+    h4: {
+      textTransform: "uppercase",
+      fontSize: "1.5rem",
     },
   },
 });

@@ -23,9 +23,10 @@ const useStyles = makeStyles((theme) => {
       maxWidth: "100vw",
     },
     bannerTextContainer: {
+      width: "80vw",
       position: "absolute",
-      top: "20%",
-      left: "5%",
+      top: "15%",
+      left: "7%",
     },
     bannerButton: {
       marginTop: 60,
@@ -41,17 +42,20 @@ const Home = () => {
 
   return (
     <div>
-      <Paper className={classes.bannerContainer}>
+      {/* Main Banner */}
+      <Paper className={classes.bannerContainer} elevation={0}>
         <img src={BannerImagePc} className={classes.banner} />
-        <div className={classes.overlay} />
-        <Grid container>
-          <Grid item xs={12} md={6}>
-            <div className={classes.bannerTextContainer}>
-              <Typography variant="h2" color="secondary" gutterBottom>
-                Created by Nurses
+        <Grid container className={classes.bannerTextContainer}>
+          <Grid item xs={12}>
+            <div>
+              <Typography variant="h4" gutterBottom>
+                Imba jobs
               </Typography>
-              <Typography variant="h2" color="text.main" paragraph>
-                - For Nurses
+              <Typography variant="h2" color="secondary" gutterBottom>
+                Provided by Nurses
+              </Typography>
+              <Typography variant="h2" paragraph>
+                For Nurses
               </Typography>
               <Button
                 className={classes.bannerButton}
@@ -72,25 +76,6 @@ const Home = () => {
           </Grid>
         </Grid>
       </Paper>
-
-      {/* <Grid container>
-          <Grid item xs={12}>
-            <Paper className={classes.bannerContainer}>
-              <img src={BannerImagePc} className={classes.banner} alt="" />
-            </Paper>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <Paper className={classes.bannerTextContainer}>
-              <Typography
-                variant="h2"
-                color="secondary"
-                className={classes.bannerText}
-              >
-                Created by Nurses for Nurses
-              </Typography>
-            </Paper>
-          </Grid>
-        </Grid> */}
     </div>
   );
 };

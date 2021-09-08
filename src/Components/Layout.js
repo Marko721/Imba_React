@@ -73,7 +73,7 @@ const Layout = ({ children }) => {
   // function that sets navigation
   useEffect(() => {
     const setResponsiveness = () => {
-      return window.innerWidth < 800
+      return window.innerWidth < 850
         ? setState((prevState) => ({ ...prevState, mobileView: true }))
         : setState((prevState) => ({ ...prevState, mobileView: false }));
     };
