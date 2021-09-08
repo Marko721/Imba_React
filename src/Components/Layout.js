@@ -46,6 +46,7 @@ const useStyles = makeStyles((theme) => {
     drawer: {
       width: 200,
       textAlign: "center",
+      marginTop: 20, //
     },
 
     // BODY CSS

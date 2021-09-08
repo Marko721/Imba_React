@@ -13,8 +13,17 @@ import BannerImageMo from "../Components/Images/banner_mo.jpeg";
 
 const useStyles = makeStyles((theme) => {
   return {
+    // MAIN BANNER
     bannerContainer: {
       position: "relative",
+    },
+    overlay: {
+      position: "absolute",
+      top: 0,
+      bottom: 0,
+      right: 0,
+      left: 0,
+      backgroundColor: "rgba(0,0,0,.1)",
     },
     banner: {
       backgroundSize: "cover",
@@ -23,7 +32,7 @@ const useStyles = makeStyles((theme) => {
       maxWidth: "100vw",
     },
     bannerTextContainer: {
-      width: "85vw",
+      width: "80vw",
       position: "absolute",
       left: "7%",
     },
@@ -34,13 +43,15 @@ const useStyles = makeStyles((theme) => {
       marginLeft: 10,
     },
   };
+
+  // JOBS SETION
 });
 
 const Home = (props) => {
   const classes = useStyles();
   const [bannerImg, setBannerImg] = useState(BannerImagePc);
 
-  // Setting the banner image and positioning the banner text
+  // Setting the banner image for mobile or pc
   useEffect(() => {
     const setResponsiveness = () => {
       return window.innerWidth < 850
@@ -61,6 +72,7 @@ const Home = (props) => {
       {/* Main Banner */}
       <Paper className={classes.bannerContainer} elevation={0}>
         <img src={bannerImg} className={classes.banner} />
+        <div className={classes.overlay} />
         <Grid
           container
           className={classes.bannerTextContainer}
@@ -68,14 +80,18 @@ const Home = (props) => {
         >
           <Grid item xs={12}>
             <div>
-              <Typography variant="h4" gutterBottom>
+              <Typography color="primary" variant="h4" gutterBottom>
                 Imba jobs
               </Typography>
-              <Typography variant="h2" color="secondary" gutterBottom>
+              <Typography variant="h2" color="secondary">
                 Created by Nurses
               </Typography>
-              <Typography variant="h2" paragraph>
+              <Typography color="primary" variant="h2" paragraph>
                 For Nurses
+              </Typography>
+              <Typography color="primary" gutterBottom>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum,
+                fugiat!
               </Typography>
               <Button
                 className={classes.bannerButton}
@@ -96,6 +112,11 @@ const Home = (props) => {
           </Grid>
         </Grid>
       </Paper>
+
+      {/* JOBS SECTION */}
+      <Typography variant="h4" align="center" style={{ marginTop: "50px" }}>
+        Check some of the available jobs
+      </Typography>
     </div>
   );
 };

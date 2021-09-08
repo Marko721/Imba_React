@@ -32,10 +32,8 @@ const theme = createTheme({
       fontSize: "3.2rem",
       fontFamily: "Roboto",
       fontWeight: "bold",
-      textTransform: "uppercase",
     },
     h4: {
-      textTransform: "uppercase",
       fontSize: "1.2rem",
     },
   },
