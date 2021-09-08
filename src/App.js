@@ -18,6 +18,9 @@ const theme = createTheme({
     secondary: {
       main: "#458BAE",
     },
+    text: {
+      primary: "#676767",
+    },
   },
   typography: {
     fontFamily: "Quicksand",
@@ -25,6 +28,12 @@ const theme = createTheme({
     fontWeightRegular: 500,
     fontWeightMedium: 600,
     fontWeightBold: 700,
+    h2: {
+      // fontSize: "4.2rem",
+      fontFamily: "Roboto",
+      fontWeight: "bold",
+      textTransform: "uppercase",
+    },
   },
 });
 
