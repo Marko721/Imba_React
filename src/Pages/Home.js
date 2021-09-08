@@ -11,6 +11,12 @@ import React, { useEffect, useState } from "react";
 import BannerImagePc from "../Components/Images/banner_pc.jpeg";
 import BannerImageMo from "../Components/Images/banner_mo.jpeg";
 
+import Card from "@material-ui/core/Card";
+import CardActionArea from "@material-ui/core/CardActionArea";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import CardMedia from "@material-ui/core/CardMedia";
+
 const useStyles = makeStyles((theme) => ({
   // MAIN BANNER
   bannerContainer: {
@@ -45,10 +51,16 @@ const useStyles = makeStyles((theme) => ({
   // JOBS SETION
   root: {
     flexGrow: 1,
+    marginTop: 30,
+  },
+  jobOffer: {
+    marginTop: 30,
+    height: 400,
+    textAlign: "center",
   },
 }));
 
-const Home = (props) => {
+const Home = () => {
   const classes = useStyles();
   const [bannerImg, setBannerImg] = useState(BannerImagePc);
 
@@ -68,10 +80,20 @@ const Home = (props) => {
     };
   }, []);
 
+  // Lists of Jobs
+  const jobOffers = [
+    // napraviti niz offera pa da se listaju sa mapom npr
+    {
+      image: "https://source.unsplash.com/random",
+      title: "New York",
+      text: "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
+    },
+  ];
+
   return (
     <div>
       {/* Main Banner */}
-      <Paper className={classes.bannerContainer} elevation={0}>
+      <Paper className={classes.bannerContainer} elevation={5}>
         <img src={bannerImg} className={classes.banner} />
         <div className={classes.overlay} />
         <Grid
@@ -117,14 +139,56 @@ const Home = (props) => {
 
       {/* JOBS SECTION */}
 
-      <Typography variant="h4" align="center" style={{ marginTop: "50px" }}>
+      <Typography
+        variant="h4"
+        color="secondary"
+        align="center"
+        style={{ marginTop: "50px" }}
+      >
         Check some of the available jobs
+      </Typography>
+      <Typography align="center">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur,
+        minima.
       </Typography>
 
       <Container>
         <Grid container spacing={3}>
+          {/* {{for (let i =0; i<=4; i++ )}} */}
           <Grid item xs={6} sm={3}>
-            <Paper className={classes.paper}>xs=6 sm=3</Paper>
+            <Card className={classes.root}>
+              <CardActionArea>
+                <CardMedia
+                  component="img"
+                  alt="Contemplative Reptile"
+                  height="140"
+                  image="https://source.unsplash.com/random"
+                  title="Contemplative Reptile"
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="h2">
+                    Lizard
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    color="textSecondary"
+                    component="p"
+                  >
+                    Lizards are a widespread group of squamate reptiles, with
+                    over 6,000 species, ranging across all continents except
+                    Antarctica
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+              <CardActions>
+                <Button size="small" color="text">
+                  Share
+                </Button>
+                <Button size="small" color="secondary">
+                  Learn More
+                </Button>
+              </CardActions>
+            </Card>
           </Grid>
         </Grid>
       </Container>
