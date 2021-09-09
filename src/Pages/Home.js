@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
 
   // Divider
   logoDivider: {
-    width: 40,
+    width: 30,
     margin: "auto",
     display: "block",
     marginBottom: 30,
