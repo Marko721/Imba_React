@@ -11,6 +11,7 @@ import React, { useEffect, useState } from "react";
 import BannerImagePc from "../Components/Images/banner_pc.jpeg";
 import BannerImageMo from "../Components/Images/banner_mo.jpeg";
 import LogoDivider from "../Components/Images/logoDivider.png";
+import BenefitsImage from "../Components/Images/benefitsImage.png";
 
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -68,6 +69,17 @@ const useStyles = makeStyles((theme) => ({
   },
   jobPreviews: {
     marginTop: 70,
+  },
+
+  // BENEFITS
+  benefitsImage: {
+    width: "100%",
+  },
+  benefitsText: {
+    display: "flex",
+    flexDirection: "column",
+    height: 300,
+    justifyContent: "center",
   },
 }));
 
@@ -223,6 +235,41 @@ const Home = () => {
               </Card>
             </Grid>
           ))}
+        </Grid>
+      </Container>
+
+      {/* BENEFITS & PERKS */}
+      <Container>
+        <Grid
+          container
+          justifyContent="center"
+          alignContent="center"
+          alignItems="center"
+          style={{ marginTop: "50px" }}
+        >
+          <Grid item xs={12}>
+            <img src={LogoDivider} className={classes.logoDivider} />
+          </Grid>
+        </Grid>
+      </Container>
+
+      <Container>
+        <Grid container spacing={3}>
+          <Grid item xs={12} sm={6} className={classes.benefitsText}>
+            <Typography variant="h4" color="secondary" align="center">
+              Benefits & Perks
+            </Typography>
+
+            <Typography align="center" color="textPrimary">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Aspernatur iusto fuga voluptas nulla ullam beatae qui, consequatur
+              explicabo magni provident quam magnam aut dolores delectus quae
+              recusandae exercitationem numquam similique.
+            </Typography>
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <img src={BenefitsImage} className={classes.benefitsImage} />
+          </Grid>
         </Grid>
       </Container>
     </div>

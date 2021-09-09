@@ -36,6 +36,7 @@ const theme = createTheme({
     },
     h4: {
       fontSize: "1.5rem",
+      marginBottom: 10,
     },
   },
 });
