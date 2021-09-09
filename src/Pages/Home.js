@@ -12,6 +12,7 @@ import BannerImagePc from "../Components/Images/banner_pc.jpeg";
 import BannerImageMo from "../Components/Images/banner_mo.jpeg";
 import LogoDivider from "../Components/Images/logoDivider.png";
 import BenefitsImage from "../Components/Images/benefitsImage.png";
+import BlueDivider from "../Components/Images/blueDivider.png";
 
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -56,6 +57,12 @@ const useStyles = makeStyles((theme) => ({
     display: "block",
     marginBottom: 30,
   },
+  blueDivider: {
+    position: "absolute",
+    zIndex: -1,
+    height: 400,
+    width: "100%",
+  },
 
   // Container
   container: {
@@ -63,6 +70,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   // JOBS SETION
+  root: {},
 
   // BENEFITS
   benefitsImage: {
@@ -124,7 +132,7 @@ const Home = () => {
   return (
     <div>
       {/* Main Banner */}
-      <Paper className={classes.bannerContainer} elevation={5}>
+      <Paper className={classes.bannerContainer} elevation={3}>
         <img src={bannerImg} className={classes.banner} />
         <div className={classes.overlay} />
         <Grid
@@ -203,10 +211,10 @@ const Home = () => {
                 <CardActionArea>
                   <CardMedia
                     component="img"
-                    alt="Contemplative Reptile"
+                    alt="City Job"
                     height="140"
                     image={job.image}
-                    title="Contemplative Reptile"
+                    title="Ciy"
                   />
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
@@ -236,20 +244,7 @@ const Home = () => {
       </Container>
 
       {/* BENEFITS & PERKS */}
-      {/* <Container>
-        <Grid
-          container
-          justifyContent="center"
-          alignContent="center"
-          alignItems="center"
-          style={{ marginTop: "50px" }}
-        >
-          <Grid item xs={12}>
-            <img src={LogoDivider} className={classes.logoDivider} />
-          </Grid>
-        </Grid>
-      </Container> */}
-
+      <img src={BlueDivider} className={classes.blueDivider} />
       <Container className={classes.container}>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6} className={classes.benefitsText}>
@@ -266,6 +261,28 @@ const Home = () => {
           </Grid>
           <Grid item xs={12} sm={6}>
             <img src={BenefitsImage} className={classes.benefitsImage} />
+          </Grid>
+        </Grid>
+      </Container>
+
+      {/* ABOUT */}
+
+      <Container className={classes.container}>
+        <Grid container spacing={3}>
+          <Grid item xs={12} sm={6}>
+            <img src={BenefitsImage} className={classes.benefitsImage} />
+          </Grid>
+          <Grid item xs={12} sm={6} className={classes.benefitsText}>
+            <Typography variant="h4" color="secondary" align="center">
+              Why are we Imba?
+            </Typography>
+
+            <Typography align="center" color="textPrimary">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Aspernatur iusto fuga voluptas nulla ullam beatae qui, consequatur
+              explicabo magni provident quam magnam aut dolores delectus quae
+              recusandae exercitationem numquam similique.
+            </Typography>
           </Grid>
         </Grid>
       </Container>
