@@ -62,7 +62,8 @@ const useStyles = makeStyles((theme) => ({
     left: 0,
     top: -180,
     zIndex: -1,
-    width: "150%",
+    width: "90%",
+    display: "none",
   },
 
   // JOBS SETION
