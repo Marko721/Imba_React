@@ -59,20 +59,22 @@ const useStyles = makeStyles((theme) => ({
   },
   blueDivider: {
     position: "absolute",
+    left: 0,
+    top: -180,
     zIndex: -1,
-    height: 400,
-    width: "100%",
-  },
-
-  // Container
-  container: {
-    marginTop: 90,
+    width: "150%",
   },
 
   // JOBS SETION
-  root: {},
+  jobsContainer: {
+    marginTop: 80,
+  },
 
   // BENEFITS
+  benefitsContainer: {
+    position: "relative",
+    marginTop: 150,
+  },
   benefitsImage: {
     width: "100%",
   },
@@ -81,6 +83,11 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     height: 300,
     justifyContent: "center",
+  },
+
+  // ABOUT
+  aboutContainer: {
+    marginTop: 150,
   },
 }));
 
@@ -131,7 +138,7 @@ const Home = () => {
 
   return (
     <div>
-      {/* Main Banner */}
+      {/* #################################### Main Banner ######################################################################## */}
       <Paper className={classes.bannerContainer} elevation={3}>
         <img src={bannerImg} className={classes.banner} />
         <div className={classes.overlay} />
@@ -180,7 +187,7 @@ const Home = () => {
         </Grid>
       </Paper>
 
-      {/* JOBS SECTION */}
+      {/* #################################### JOBS SECTION ######################################################################## */}
       <Container>
         <Grid
           container
@@ -203,7 +210,7 @@ const Home = () => {
         </Grid>
       </Container>
 
-      <Container className={classes.container}>
+      <Container className={classes.jobsContainer}>
         <Grid container spacing={3}>
           {jobOffers.map((job) => (
             <Grid item xs={12} sm={6} md={3} key={job.title}>
@@ -243,9 +250,9 @@ const Home = () => {
         </Grid>
       </Container>
 
-      {/* BENEFITS & PERKS */}
-      <img src={BlueDivider} className={classes.blueDivider} />
-      <Container className={classes.container}>
+      {/* #################################### BENEFITS & PERKS ######################################################################## */}
+      <Container className={classes.benefitsContainer}>
+        <img src={BlueDivider} className={classes.blueDivider} />
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6} className={classes.benefitsText}>
             <Typography variant="h4" color="secondary" align="center">
@@ -265,9 +272,8 @@ const Home = () => {
         </Grid>
       </Container>
 
-      {/* ABOUT */}
-
-      <Container className={classes.container}>
+      {/* #################################### ABOUT ######################################################################## */}
+      <Container className={classes.aboutContainer}>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6}>
             <img src={BenefitsImage} className={classes.benefitsImage} />
