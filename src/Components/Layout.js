@@ -255,8 +255,6 @@ const Layout = ({ children }) => {
             ))}
           </List>
         </Drawer>
-
-        {/* <div>{femmecubatorLogo}</div> */}
       </Toolbar>
     );
   };

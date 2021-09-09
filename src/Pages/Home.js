@@ -49,14 +49,16 @@ const useStyles = makeStyles((theme) => ({
   },
 
   // JOBS SETION
-  root: {
-    flexGrow: 1,
-    marginTop: 30,
-  },
   jobOffer: {
     marginTop: 30,
     height: 400,
     textAlign: "center",
+  },
+  root: {
+    flexGrow: 1,
+  },
+  jobPreviews: {
+    marginTop: 70,
   },
 }));
 
@@ -80,13 +82,28 @@ const Home = () => {
     };
   }, []);
 
-  // Lists of Jobs
+  // Lists of Jobs Preview
   const jobOffers = [
     // napraviti niz offera pa da se listaju sa mapom npr
     {
-      image: "https://source.unsplash.com/random",
+      image: "https://source.unsplash.com/weekly?city, blue",
       title: "New York",
-      text: "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
+      text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis, rem.",
+    },
+    {
+      image: "https://source.unsplash.com/daily?city, blue",
+      title: "Boston",
+      text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis, rem.",
+    },
+    {
+      image: "https://source.unsplash.com/weekly?city, panorama, blue",
+      title: "Chicago",
+      text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis, rem.",
+    },
+    {
+      image: "https://source.unsplash.com/daily?city, bridge, blue",
+      title: "Fargo",
+      text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis, rem.",
     },
   ];
 
@@ -147,49 +164,49 @@ const Home = () => {
       >
         Check some of the available jobs
       </Typography>
-      <Typography align="center">
+
+      <Typography align="center" color="textPrimary">
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur,
         minima.
       </Typography>
 
-      <Container>
+      <Container className={classes.jobPreviews}>
         <Grid container spacing={3}>
-          {/* {{for (let i =0; i<=4; i++ )}} */}
-          <Grid item xs={6} sm={3}>
-            <Card className={classes.root}>
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  alt="Contemplative Reptile"
-                  height="140"
-                  image="https://source.unsplash.com/random"
-                  title="Contemplative Reptile"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="h2">
-                    Lizard
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color="textSecondary"
-                    component="p"
-                  >
-                    Lizards are a widespread group of squamate reptiles, with
-                    over 6,000 species, ranging across all continents except
-                    Antarctica
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-              <CardActions>
-                <Button size="small" color="text">
-                  Share
-                </Button>
-                <Button size="small" color="secondary">
-                  Learn More
-                </Button>
-              </CardActions>
-            </Card>
-          </Grid>
+          {jobOffers.map((job) => (
+            <Grid item xs={12} sm={6} md={3}>
+              <Card className={classes.root}>
+                <CardActionArea>
+                  <CardMedia
+                    component="img"
+                    alt="Contemplative Reptile"
+                    height="140"
+                    image={job.image}
+                    title="Contemplative Reptile"
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      {job.title}
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                      component="p"
+                    >
+                      {job.text}
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+                <CardActions>
+                  <Button size="small" color="text">
+                    Share
+                  </Button>
+                  <Button size="small" color="secondary">
+                    Learn More
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
+          ))}
         </Grid>
       </Container>
     </div>
