@@ -35,13 +35,12 @@ const useStyles = makeStyles((theme) => ({
   banner: {
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
-    backgroundPosition: "center",
+    backgroundPosition: "center center",
     maxWidth: "100vw",
   },
   bannerTextContainer: {
     width: "80vw",
     position: "absolute",
-    left: "7%",
   },
   bannerButton: {
     marginTop: 60,
@@ -52,24 +51,18 @@ const useStyles = makeStyles((theme) => ({
 
   // Divider
   logoDivider: {
-    width: 30,
+    width: 40,
     margin: "auto",
     display: "block",
     marginBottom: 30,
   },
 
+  // Container
+  container: {
+    marginTop: 90,
+  },
+
   // JOBS SETION
-  jobOffer: {
-    marginTop: 30,
-    height: 400,
-    textAlign: "center",
-  },
-  root: {
-    flexGrow: 1,
-  },
-  jobPreviews: {
-    marginTop: 70,
-  },
 
   // BENEFITS
   benefitsImage: {
@@ -137,7 +130,11 @@ const Home = () => {
         <Grid
           container
           className={classes.bannerTextContainer}
-          style={bannerImg == BannerImagePc ? { top: "20%" } : { top: "7%" }}
+          style={
+            bannerImg == BannerImagePc
+              ? { top: "21%", left: "5%" }
+              : { top: "5%", left: "7%" }
+          }
         >
           <Grid item xs={12}>
             <div>
@@ -198,7 +195,7 @@ const Home = () => {
         </Grid>
       </Container>
 
-      <Container className={classes.jobPreviews}>
+      <Container className={classes.container}>
         <Grid container spacing={3}>
           {jobOffers.map((job) => (
             <Grid item xs={12} sm={6} md={3} key={job.title}>
@@ -239,7 +236,7 @@ const Home = () => {
       </Container>
 
       {/* BENEFITS & PERKS */}
-      <Container>
+      {/* <Container>
         <Grid
           container
           justifyContent="center"
@@ -251,9 +248,9 @@ const Home = () => {
             <img src={LogoDivider} className={classes.logoDivider} />
           </Grid>
         </Grid>
-      </Container>
+      </Container> */}
 
-      <Container>
+      <Container className={classes.container}>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6} className={classes.benefitsText}>
             <Typography variant="h4" color="secondary" align="center">
