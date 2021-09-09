@@ -10,6 +10,7 @@ import {
 import React, { useEffect, useState } from "react";
 import BannerImagePc from "../Components/Images/banner_pc.jpeg";
 import BannerImageMo from "../Components/Images/banner_mo.jpeg";
+import LogoDivider from "../Components/Images/logoDivider.png";
 
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -46,6 +47,14 @@ const useStyles = makeStyles((theme) => ({
   },
   bannerButtonIcon: {
     marginLeft: 10,
+  },
+
+  // Divider
+  logoDivider: {
+    width: 40,
+    margin: "auto",
+    display: "block",
+    marginBottom: 30,
   },
 
   // JOBS SETION
@@ -155,20 +164,27 @@ const Home = () => {
       </Paper>
 
       {/* JOBS SECTION */}
+      <Container>
+        <Grid
+          container
+          justifyContent="center"
+          alignContent="center"
+          alignItems="center"
+          style={{ marginTop: "50px" }}
+        >
+          <Grid item xs={12}>
+            <img src={LogoDivider} className={classes.logoDivider} />
+            <Typography variant="h4" color="secondary" align="center">
+              Available jobs
+            </Typography>
 
-      <Typography
-        variant="h4"
-        color="secondary"
-        align="center"
-        style={{ marginTop: "50px" }}
-      >
-        Check some of the available jobs
-      </Typography>
-
-      <Typography align="center" color="textPrimary">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur,
-        minima.
-      </Typography>
+            <Typography align="center" color="textPrimary">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Consequuntur, minima.
+            </Typography>
+          </Grid>
+        </Grid>
+      </Container>
 
       <Container className={classes.jobPreviews}>
         <Grid container spacing={3}>

@@ -35,7 +35,7 @@ const theme = createTheme({
       fontWeight: "bold",
     },
     h4: {
-      fontSize: "1.2rem",
+      fontSize: "1.5rem",
     },
   },
 });
