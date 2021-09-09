@@ -173,8 +173,8 @@ const Home = () => {
       <Container className={classes.jobPreviews}>
         <Grid container spacing={3}>
           {jobOffers.map((job) => (
-            <Grid item xs={12} sm={6} md={3}>
-              <Card className={classes.root}>
+            <Grid item xs={12} sm={6} md={3} key={job.title}>
+              <Card className={classes.root} elevation={1}>
                 <CardActionArea>
                   <CardMedia
                     component="img"
@@ -197,9 +197,9 @@ const Home = () => {
                   </CardContent>
                 </CardActionArea>
                 <CardActions>
-                  <Button size="small" color="text">
+                  {/* <Button size="small" color="text">
                     Share
-                  </Button>
+                  </Button> */}
                   <Button size="small" color="secondary">
                     Learn More
                   </Button>
