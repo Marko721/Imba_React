@@ -26,7 +26,7 @@ const Footer = ({ mobileView }) => {
   const location = useLocation();
 
   // MENU LIST ITEMS
-  const menuItemsLeft = [
+  const menuItems = [
     {
       text: "Nurses",
       path: "/nurses",
@@ -44,25 +44,14 @@ const Footer = ({ mobileView }) => {
       path: "/contact",
     },
   ];
-  const menuItemsRight = [
-    {
-      text: "Log in",
-      path: "/login",
-    },
-    {
-      text: "Register",
-      path: "/register",
-    },
-  ];
 
-  // DESKTOP FOOTER VIEW
-  const displayFooterDesktop = () => {
-    return (
-      <div>
+  return (
+    <div className={classes.footer}>
+      <Container>
         <Grid container>
           <Grid item xs={12} sm={6} md={3}>
             <List className={classes.listitemleft}>
-              {menuItemsLeft.map((item) => (
+              {menuItems.map((item) => (
                 <ListItem
                   key={item.text}
                   button
@@ -77,36 +66,8 @@ const Footer = ({ mobileView }) => {
                 </ListItem>
               ))}
             </List>
-            {/* RIGHT NAVIGATION */}
-            <List className={classes.listitemright}>
-              {menuItemsRight.map((item) => (
-                <ListItem
-                  key={item.text}
-                  button
-                  onClick={() => history.push(item.path)}
-                  className={
-                    location.pathname == item.path ? classes.active : null
-                  }
-                >
-                  {/* {item.path == "/login" ? <HomeIcon color="secondary" /> : null} */}
-
-                  <ListItemText primary={item.text}></ListItemText>
-                </ListItem>
-              ))}
-            </List>
           </Grid>
         </Grid>
-      </div>
-    );
-  };
-
-  // MOBILE FOOTER VIEW
-  const displayFooterMobile = () => {};
-
-  return (
-    <div className={classes.footer}>
-      <Container>
-        {mobileView ? displayFooterMobile() : displayFooterDesktop()}
       </Container>
     </div>
   );
