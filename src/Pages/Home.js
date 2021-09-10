@@ -96,6 +96,7 @@ const useStyles = makeStyles((theme) => ({
   // ABOUT
   aboutContainer: {
     marginTop: 150,
+    marginBottom: 150,
   },
 }));
 

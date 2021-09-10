@@ -124,7 +124,7 @@ const Layout = ({ children }) => {
   ];
 
   // DESKTOP NAVIGATION VIEW
-  const displayDesktop = () => {
+  const displayNavbarDesktop = () => {
     return (
       <Toolbar>
         {/* LOGO */}
@@ -171,7 +171,7 @@ const Layout = ({ children }) => {
   };
 
   // MOBILE NAVIGATION VIEW
-  const displayMobile = () => {
+  const displayNavbarMobile = () => {
     const handleDrawerOpen = () =>
       setState((prevState) => ({ ...prevState, drawerOpen: true }));
     const handleDrawerClose = () =>
@@ -269,7 +269,7 @@ const Layout = ({ children }) => {
     <div>
       {/* NAVBAR */}
       <AppBar position="static" className={classes.appbar}>
-        {mobileView ? displayMobile() : displayDesktop()}
+        {mobileView ? displayNavbarMobile() : displayNavbarDesktop()}
       </AppBar>
 
       {/* CONTENT */}
