@@ -55,6 +55,12 @@ const useStyles = makeStyles((theme) => {
       // width: "80vw",
       // padding: 5,
     },
+
+    // FOOTER
+    footer: {
+      height: 400,
+      backgroundColor: "rgba(0,0,0,.5)",
+    },
   };
 });
 
@@ -266,8 +272,11 @@ const Layout = ({ children }) => {
         {mobileView ? displayMobile() : displayDesktop()}
       </AppBar>
 
-      {/* Content */}
+      {/* CONTENT */}
       <div className={classes.page}>{children}</div>
+
+      {/* FOOTER */}
+      <div className={classes.footer}></div>
     </div>
   );
 };

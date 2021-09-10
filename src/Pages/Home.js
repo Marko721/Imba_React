@@ -11,8 +11,8 @@ import React, { useEffect, useState } from "react";
 import BannerImagePc from "../Components/Images/banner_pc.jpeg";
 import BannerImageMo from "../Components/Images/banner_mo.jpeg";
 import LogoDivider from "../Components/Images/logoDivider.png";
-import BenefitsImage from "../Components/Images/benefitsImage.png";
-import BlueDivider from "../Components/Images/blueDivider.png";
+import BenefitsImage from "../Components/Images/benefitsImage.svg";
+import aboutImage from "../Components/Images/aboutImage.svg";
 
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
@@ -34,9 +34,10 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "rgba(0,0,0,.1)",
   },
   banner: {
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center center",
+    // backgroundSize: "cover",
+    // backgroundRepeat: "no-repeat",
+    // backgroundPosition: "center center",
+    backgroundAttachment: "fixed",
     maxWidth: "100vw",
   },
   bannerTextContainer: {
@@ -58,12 +59,14 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: 30,
   },
   blueDivider: {
-    position: "absolute",
-    left: 0,
-    top: -180,
+    // position: "absolute",
+    // left: 0,
+    // top: -180,
+    // left: -100,
     zIndex: -1,
-    width: "90%",
+    width: "114%",
     display: "none",
+    // backgroundColor: "rgba(145, 195, 221, .4)",
   },
 
   // JOBS SETION
@@ -72,6 +75,9 @@ const useStyles = makeStyles((theme) => ({
   },
 
   // BENEFITS
+  blueBg: {
+    backgroundColor: "rgba(145, 195, 221, .4)",
+  },
   benefitsContainer: {
     position: "relative",
     marginTop: 150,
@@ -84,6 +90,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     height: 300,
     justifyContent: "center",
+    marginTop: 50,
   },
 
   // ABOUT
@@ -252,12 +259,44 @@ const Home = () => {
       </Container>
 
       {/* #################################### BENEFITS & PERKS ######################################################################## */}
-      <Container className={classes.benefitsContainer}>
-        <img src={BlueDivider} className={classes.blueDivider} />
+      <div className={classes.blueBg}>
+        <Container className={classes.benefitsContainer}>
+          <Grid container spacing={3}>
+            <Grid item xs={12} sm={6} className={classes.benefitsText}>
+              <Typography variant="h4" color="secondary" align="center">
+                Benefits & Perks
+              </Typography>
+
+              <Typography align="center" color="textPrimary">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Aspernatur iusto fuga voluptas nulla ullam beatae qui,
+                consequatur explicabo magni provident quam magnam aut dolores
+                delectus quae recusandae exercitationem numquam similique.
+              </Typography>
+              <Typography align="center" color="textPrimary">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Aspernatur iusto fuga voluptas nulla ullam beatae qui,
+                consequatur explicabo magni provident quam magnam aut dolores
+                delectus quae recusandae exercitationem numquam similique.
+              </Typography>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <img src={BenefitsImage} className={classes.benefitsImage} />
+            </Grid>
+          </Grid>
+        </Container>
+      </div>
+
+      {/* #################################### ABOUT ######################################################################## */}
+
+      <Container className={classes.aboutContainer}>
         <Grid container spacing={3}>
+          <Grid item xs={12} sm={6}>
+            <img src={aboutImage} className={classes.benefitsImage} />
+          </Grid>
           <Grid item xs={12} sm={6} className={classes.benefitsText}>
             <Typography variant="h4" color="secondary" align="center">
-              Benefits & Perks
+              Why are we Imba?
             </Typography>
 
             <Typography align="center" color="textPrimary">
@@ -266,24 +305,6 @@ const Home = () => {
               explicabo magni provident quam magnam aut dolores delectus quae
               recusandae exercitationem numquam similique.
             </Typography>
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <img src={BenefitsImage} className={classes.benefitsImage} />
-          </Grid>
-        </Grid>
-      </Container>
-
-      {/* #################################### ABOUT ######################################################################## */}
-      <Container className={classes.aboutContainer}>
-        <Grid container spacing={3}>
-          <Grid item xs={12} sm={6}>
-            <img src={BenefitsImage} className={classes.benefitsImage} />
-          </Grid>
-          <Grid item xs={12} sm={6} className={classes.benefitsText}>
-            <Typography variant="h4" color="secondary" align="center">
-              Why are we Imba?
-            </Typography>
-
             <Typography align="center" color="textPrimary">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Aspernatur iusto fuga voluptas nulla ullam beatae qui, consequatur
