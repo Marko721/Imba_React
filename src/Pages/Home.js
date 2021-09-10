@@ -276,9 +276,7 @@ const Home = () => {
               </Typography>
               <Typography align="center" color="textPrimary">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Aspernatur iusto fuga voluptas nulla ullam beatae qui,
-                consequatur explicabo magni provident quam magnam aut dolores
-                delectus quae recusandae exercitationem numquam similique.
+                Aspernatur iusto fuga voluptas nulla ullam beatae qui.
               </Typography>
             </Grid>
             <Grid item xs={12} sm={6}>
