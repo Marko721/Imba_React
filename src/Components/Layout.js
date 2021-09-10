@@ -265,6 +265,12 @@ const Layout = ({ children }) => {
     );
   };
 
+  // DESKTOP FOOTER VIEW
+  const displayFooterDesktop = () => {};
+
+  // MOBILE FOOTER VIEW
+  const displayFooterMobile = () => {};
+
   return (
     <div>
       {/* NAVBAR */}
@@ -276,7 +282,9 @@ const Layout = ({ children }) => {
       <div className={classes.page}>{children}</div>
 
       {/* FOOTER */}
-      <div className={classes.footer}></div>
+      <div className={classes.footer}>
+        {mobileView ? displayFooterMobile() : displayFooterDesktop()}
+      </div>
     </div>
   );
 };
