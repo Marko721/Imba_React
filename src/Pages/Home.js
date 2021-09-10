@@ -263,7 +263,7 @@ const Home = () => {
       <div className={classes.blueBg}>
         <Container className={classes.benefitsContainer}>
           <Grid container spacing={3}>
-            <Grid item xs={12} sm={6} className={classes.benefitsText}>
+            <Grid item xs={12} sm={12} md={6} className={classes.benefitsText}>
               <Typography variant="h4" color="secondary" align="center">
                 Benefits & Perks
               </Typography>
@@ -279,7 +279,7 @@ const Home = () => {
                 Aspernatur iusto fuga voluptas nulla ullam beatae qui.
               </Typography>
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={12} md={6}>
               <img src={BenefitsImage} className={classes.benefitsImage} />
             </Grid>
           </Grid>
@@ -289,11 +289,8 @@ const Home = () => {
       {/* #################################### ABOUT ######################################################################## */}
 
       <Container className={classes.aboutContainer}>
-        <Grid container spacing={3}>
-          <Grid item xs={12} sm={6}>
-            <img src={aboutImage} className={classes.benefitsImage} />
-          </Grid>
-          <Grid item xs={12} sm={6} className={classes.benefitsText}>
+        <Grid container spacing={3} direction="row-reverse">
+          <Grid item xs={12} sm={12} md={6} className={classes.benefitsText}>
             <Typography variant="h4" color="secondary" align="center">
               Why are we Imba?
             </Typography>
@@ -310,6 +307,10 @@ const Home = () => {
               explicabo magni provident quam magnam aut dolores delectus quae
               recusandae exercitationem numquam similique.
             </Typography>
+          </Grid>
+
+          <Grid item xs={12} sm={12} md={6}>
+            <img src={aboutImage} className={classes.benefitsImage} />
           </Grid>
         </Grid>
       </Container>
