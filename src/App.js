@@ -10,6 +10,7 @@ import Contact from "./Pages/Contact";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import Testing from "./Pages/Testing";
+import JobSearch from "./Pages/JobSearch";
 
 const theme = createTheme({
   palette: {
@@ -67,6 +68,9 @@ function App() {
             </Route>
             <Route path="/register">
               <Register />
+            </Route>
+            <Route path="/job_search">
+              <JobSearch />
             </Route>
             <Route path="/testing">
               <Testing />

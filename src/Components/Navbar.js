@@ -31,11 +31,13 @@ const useStyles = makeStyles((theme) => {
       flexDirection: "row",
       alignItems: "flex-start",
       marginLeft: 30,
+      whiteSpace: "nowrap",
     },
     listitemright: {
       display: "flex",
       flexDirection: "row",
       marginLeft: "auto",
+      whiteSpace: "nowrap",
     },
     active: {
       color: "#6ca6c5",
@@ -105,6 +107,10 @@ const Navbar = () => {
     {
       text: "Register",
       path: "/register",
+    },
+    {
+      text: "Jobs",
+      path: "/jobsearch",
     },
   ];
 
