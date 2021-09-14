@@ -180,7 +180,7 @@ const JobSearch = () => {
 
       {/* GRID ITEM */}
       {dbApi.map((Job) => (
-        <div className={classes.jobsWrapper}>
+        <div className={classes.jobsWrapper} key={Job.id}>
           <Paper className={classes.jobsContainer} elevation={1}>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={4} md={3}>
