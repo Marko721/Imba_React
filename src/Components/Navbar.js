@@ -1,4 +1,10 @@
-import { makeStyles, Paper, Typography, Grid } from "@material-ui/core";
+import {
+  makeStyles,
+  Paper,
+  Typography,
+  Grid,
+  Container,
+} from "@material-ui/core";
 import { useState, useEffect } from "react";
 import React from "react";
 import AppBar from "@material-ui/core/AppBar";
@@ -16,7 +22,7 @@ const useStyles = makeStyles((theme) => {
   return {
     // NAVBAR CSS
     appbar: {
-      width: "100vw",
+      // width: "100vw",
       margin: "auto",
       padding: 15,
       position: "static",
@@ -110,7 +116,7 @@ const Navbar = () => {
     },
     {
       text: "Jobs",
-      path: "/jobsearch",
+      path: "/job_search",
     },
   ];
 

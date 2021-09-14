@@ -151,49 +151,51 @@ const Home = () => {
       <Paper className={classes.bannerContainer} elevation={3}>
         <img src={bannerImg} className={classes.banner} />
         <div className={classes.overlay} />
-        <Grid
-          container
-          className={classes.bannerTextContainer}
-          style={
-            bannerImg == BannerImagePc
-              ? { top: "21%", left: "5%" }
-              : { top: "5%", left: "7%" }
-          }
-        >
-          <Grid item xs={12}>
-            <div>
-              <Typography color="primary" variant="h4" gutterBottom>
-                Imba jobs
-              </Typography>
-              <Typography variant="h2" color="secondary">
-                Created by Nurses
-              </Typography>
-              <Typography color="primary" variant="h2" paragraph>
-                For Nurses
-              </Typography>
-              <Typography color="primary">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              </Typography>
-              <Typography color="primary">Harum, fugiat!</Typography>
+        <Container>
+          <Grid
+            container
+            className={classes.bannerTextContainer}
+            style={
+              bannerImg == BannerImagePc
+                ? { top: "21%", left: "5%" }
+                : { top: "5%", left: "7%" }
+            }
+          >
+            <Grid item xs={12}>
+              <div>
+                <Typography color="primary" variant="h4" gutterBottom>
+                  Imba jobs
+                </Typography>
+                <Typography variant="h2" color="secondary">
+                  Created by Nurses
+                </Typography>
+                <Typography color="primary" variant="h2" paragraph>
+                  For Nurses
+                </Typography>
+                <Typography color="primary">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                </Typography>
+                <Typography color="primary">Harum, fugiat!</Typography>
 
-              <Button
-                className={classes.bannerButton}
-                size="large"
-                variant="contained"
-                color="secondary"
-                href="#"
-              >
-                Get Started
-                <Icon
-                  // className="fal fa-arrow-right"
-                  className="fad fa-chevron-right"
-                  color="primary"
-                  style={{ marginLeft: 15 }} // not working when putted in classes styles
-                />
-              </Button>
-            </div>
+                <Button
+                  className={classes.bannerButton}
+                  size="large"
+                  variant="contained"
+                  color="secondary"
+                  href="#"
+                >
+                  Get Started
+                  <Icon
+                    // className="fal fa-arrow-right"
+                    className="fad fa-chevron-right"
+                    color="primary"
+                    style={{ marginLeft: 15 }} // not working when putted in classes styles
+                  />
+                </Button>
+              </div>
+            </Grid>
           </Grid>
-        </Grid>
+        </Container>
       </Paper>
 
       {/* #################################### JOBS SECTION ######################################################################## */}
