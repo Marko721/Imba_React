@@ -38,91 +38,196 @@ const useStyles = makeStyles((theme) => ({
 
 const JobSearch = () => {
   const classes = useStyles();
+
+  const dbApi = [
+    {
+      Facility: "Johns Hopkins Bayview Medical Center.",
+      Description: "Emergency Room RN Nights",
+      City: "Baltimore",
+      State: "MD",
+      Image: "https://source.unsplash.com/1200x800",
+      Proffesion: "Nurse",
+      Shift: "Night, 3x12",
+      Start: "November, 5",
+      Length: "12 Weeks",
+    },
+    {
+      Facility: "Johns Hopkins Bayview Medical Center.",
+      Description: "Emergency Room RN Nights",
+      City: "Baltimore",
+      State: "MD",
+      Image: "https://source.unsplash.com/1200x800",
+      Proffesion: "Nurse",
+      Shift: "Night, 3x12",
+      Start: "November, 5",
+      Length: "12 Weeks",
+    },
+    {
+      Facility: "Johns Hopkins Bayview Medical Center.",
+      Description: "Emergency Room RN Nights",
+      City: "Baltimore",
+      State: "MD",
+      Image: "https://source.unsplash.com/1200x800",
+      Proffesion: "Nurse",
+      Shift: "Night, 3x12",
+      Start: "November, 5",
+      Length: "12 Weeks",
+    },
+    {
+      Facility: "Johns Hopkins Bayview Medical Center.",
+      Description: "Emergency Room RN Nights",
+      City: "Baltimore",
+      State: "MD",
+      Image: "https://source.unsplash.com/1200x800",
+      Proffesion: "Nurse",
+      Shift: "Night, 3x12",
+      Start: "November, 5",
+      Length: "12 Weeks",
+    },
+    {
+      Facility: "Johns Hopkins Bayview Medical Center.",
+      Description: "Emergency Room RN Nights",
+      City: "Baltimore",
+      State: "MD",
+      Image: "https://source.unsplash.com/1200x800",
+      Proffesion: "Nurse",
+      Shift: "Night, 3x12",
+      Start: "November, 5",
+      Length: "12 Weeks",
+    },
+    {
+      Facility: "Johns Hopkins Bayview Medical Center.",
+      Description: "Emergency Room RN Nights",
+      City: "Baltimore",
+      State: "MD",
+      Image: "https://source.unsplash.com/1200x800",
+      Proffesion: "Nurse",
+      Shift: "Night, 3x12",
+      Start: "November, 5",
+      Length: "12 Weeks",
+    },
+    {
+      Facility: "Johns Hopkins Bayview Medical Center.",
+      Description: "Emergency Room RN Nights",
+      City: "Baltimore",
+      State: "MD",
+      Image: "https://source.unsplash.com/1200x800",
+      Proffesion: "Nurse",
+      Shift: "Night, 3x12",
+      Start: "November, 5",
+      Length: "12 Weeks",
+    },
+    {
+      Facility: "Johns Hopkins Bayview Medical Center.",
+      Description: "Emergency Room RN Nights",
+      City: "Baltimore",
+      State: "MD",
+      Image: "https://source.unsplash.com/1200x800",
+      Proffesion: "Nurse",
+      Shift: "Night, 3x12",
+      Start: "November, 5",
+      Length: "12 Weeks",
+    },
+    {
+      Facility: "Johns Hopkins Bayview Medical Center.",
+      Description: "Emergency Room RN Nights",
+      City: "Baltimore",
+      State: "MD",
+      Image: "https://source.unsplash.com/1200x800",
+      Proffesion: "Nurse",
+      Shift: "Night, 3x12",
+      Start: "November, 5",
+      Length: "12 Weeks",
+    },
+  ];
+
   return (
     <Container>
       {/* FILTERS AND DASHBOARD */}
 
       {/* GRID ITEM */}
-      <div className={classes.jobsWrapper}>
-        <Paper className={classes.jobsContainer} elevation={1}>
-          <Grid container spacing={2}>
-            <Grid item xs={12} sm={4} md={3}>
-              <ButtonBase className={classes.image}>
-                <img
-                  className={classes.img}
-                  alt="job_search"
-                  src="https://source.unsplash.com/daily?landscape"
-                />
-              </ButtonBase>
-            </Grid>
-            <Grid item xs={12} sm={8} md={9} container>
-              <Grid item xs container direction="column" spacing={2}>
-                <Grid item xs>
-                  <Typography gutterBottom variant="h4">
-                    Johns Hopkins Bayview Medical Center.
-                  </Typography>
-                  <Typography variant="body2" color="secondary" gutterBottom>
-                    Emergency Room RN Nights • Baltimore, MD
-                  </Typography>
+      {dbApi.map((Job) => (
+        <div className={classes.jobsWrapper}>
+          <Paper className={classes.jobsContainer} elevation={1}>
+            <Grid container spacing={2}>
+              <Grid item xs={12} sm={4} md={3}>
+                <ButtonBase className={classes.image}>
+                  <img
+                    className={classes.img}
+                    alt="job_search"
+                    src={Job.Image}
+                  />
+                </ButtonBase>
+              </Grid>
+              <Grid item xs={12} sm={8} md={9} container>
+                <Grid item xs container direction="column" spacing={2}>
+                  <Grid item xs>
+                    <Typography gutterBottom variant="h4">
+                      {Job.Facility}
+                    </Typography>
+                    <Typography variant="body2" color="secondary" gutterBottom>
+                      {Job.Description} • {Job.City}, {Job.State}
+                    </Typography>
 
-                  <div className={classes.iconTextContainer}>
-                    <i class="fas fa-user-md"></i>
+                    <div className={classes.iconTextContainer}>
+                      <i class="fas fa-user-md"></i>
+                      <Typography
+                        variant="body2"
+                        color="textSecondary"
+                        className={classes.iconText}
+                      >
+                        {Job.Proffesion}
+                      </Typography>
+                    </div>
+                    <div className={classes.iconTextContainer}>
+                      <i class="fas fa-hourglass-half"></i>
+                      <Typography
+                        variant="body2"
+                        color="textSecondary"
+                        className={classes.iconText}
+                      >
+                        {Job.Shift}
+                      </Typography>
+                    </div>
+                    <div className={classes.iconTextContainer}>
+                      <i class="far fa-calendar"></i>
+                      <Typography
+                        variant="body2"
+                        color="textSecondary"
+                        className={classes.iconText}
+                      >
+                        {Job.Start}
+                      </Typography>
+                    </div>
+                    <div className={classes.iconTextContainer}>
+                      <i class="far fa-calendar-alt"></i>
+                      <Typography
+                        variant="body2"
+                        color="textSecondary"
+                        className={classes.iconText}
+                      >
+                        {Job.Length}
+                      </Typography>
+                    </div>
+                  </Grid>
+                  <Grid item>
                     <Typography
                       variant="body2"
-                      color="textSecondary"
-                      className={classes.iconText}
+                      color="secondary"
+                      style={{ cursor: "pointer" }}
                     >
-                      Nurse
+                      I'm Interested
                     </Typography>
-                  </div>
-                  <div className={classes.iconTextContainer}>
-                    <i class="far fa-clock"></i>
-                    <Typography
-                      variant="body2"
-                      color="textSecondary"
-                      className={classes.iconText}
-                    >
-                      Night, 3x12
-                    </Typography>
-                  </div>
-                  <div className={classes.iconTextContainer}>
-                    <i class="far fa-calendar"></i>
-                    <Typography
-                      variant="body2"
-                      color="textSecondary"
-                      className={classes.iconText}
-                    >
-                      November, 5
-                    </Typography>
-                  </div>
-                  <div className={classes.iconTextContainer}>
-                    <i class="far fa-calendar-alt"></i>
-                    <Typography
-                      variant="body2"
-                      color="textSecondary"
-                      className={classes.iconText}
-                    >
-                      12 Weeks
-                    </Typography>
-                  </div>
+                  </Grid>
                 </Grid>
                 <Grid item>
-                  <Typography
-                    variant="body2"
-                    color="secondary"
-                    style={{ cursor: "pointer" }}
-                  >
-                    I'm Interested
-                  </Typography>
+                  <Typography variant="subtitle1">$3923.00/week</Typography>
                 </Grid>
               </Grid>
-              <Grid item>
-                <Typography variant="subtitle1">$3923.00/week</Typography>
-              </Grid>
             </Grid>
-          </Grid>
-        </Paper>
-      </div>
+          </Paper>
+        </div>
+      ))}
     </Container>
   );
 };
