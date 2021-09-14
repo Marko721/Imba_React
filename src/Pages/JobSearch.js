@@ -9,6 +9,12 @@ import Button from "@material-ui/core/Button";
 import Pagination from "@material-ui/lab/Pagination";
 
 const useStyles = makeStyles((theme) => ({
+  //FILTERS SECTION
+  filtersWrapper: {
+    marginTop: 50,
+  },
+
+  // JOBS SECTION
   jobsWrapper: {
     flexGrow: 1,
     marginTop: 25,
@@ -161,6 +167,9 @@ const JobSearch = () => {
   return (
     <Container>
       {/* FILTERS AND DASHBOARD */}
+      <Paper elevation={1} className={classes.filtersWrapper}>
+        Filters Sort
+      </Paper>
 
       {/* GRID ITEM */}
       {dbApi.map((Job) => (
@@ -176,7 +185,7 @@ const JobSearch = () => {
                   />
                 </ButtonBase>
               </Grid>
-              <Grid item xs={12} sm={8} md={9} container>
+              <Grid item xs={12} sm={8} md={9} container alignContent="center">
                 <Grid item xs container direction="column" spacing={2}>
                   <Grid item xs>
                     <Typography gutterBottom>{Job.Facility}</Typography>
