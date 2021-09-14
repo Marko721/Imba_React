@@ -6,6 +6,7 @@ import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import ButtonBase from "@material-ui/core/ButtonBase";
 import Button from "@material-ui/core/Button";
+import Pagination from "@material-ui/lab/Pagination";
 
 const useStyles = makeStyles((theme) => ({
   jobsWrapper: {
@@ -37,6 +38,18 @@ const useStyles = makeStyles((theme) => ({
   },
   iconText: {
     marginLeft: 5,
+  },
+  interestedButton: {
+    display: "flex",
+    alignItems: "flex-end",
+    justifyContent: "flex-end",
+  },
+
+  pagination: {
+    display: "flex",
+    // alignItems: "center",
+    justifyContent: "center",
+    marginBottom: 50,
   },
 }));
 
@@ -166,10 +179,8 @@ const JobSearch = () => {
               <Grid item xs={12} sm={8} md={9} container>
                 <Grid item xs container direction="column" spacing={2}>
                   <Grid item xs>
-                    <Typography gutterBottom variant="h4">
-                      {Job.Facility}
-                    </Typography>
-                    <Typography variant="body2" color="secondary" gutterBottom>
+                    <Typography gutterBottom>{Job.Facility}</Typography>
+                    <Typography variant="h4" color="secondary" gutterBottom>
                       {Job.Description} • {Job.City}, {Job.State}
                     </Typography>
 
@@ -213,21 +224,32 @@ const JobSearch = () => {
                         {Job.Length}
                       </Typography>
                     </div>
+                    <Grid container>
+                      <Grid item xs={6}>
+                        <Typography variant="subtitle1">
+                          $3923.00/week
+                        </Typography>
+                      </Grid>
+                      <Grid item xs={6} className={classes.interestedButton}>
+                        <Button variant="contained" color="secondary">
+                          I'm interested
+                        </Button>
+                      </Grid>
+                    </Grid>
                   </Grid>
-                  <Grid item>
-                    <Button variant="contained" color="secondary">
-                      I'm interested
-                    </Button>
-                  </Grid>
-                </Grid>
-                <Grid item>
-                  <Typography variant="subtitle1">$3923.00/week</Typography>
                 </Grid>
               </Grid>
             </Grid>
           </Paper>
         </div>
       ))}
+
+      <Pagination
+        count={10}
+        shape="rounded"
+        size="large"
+        className={classes.pagination}
+      />
     </Container>
   );
 };
