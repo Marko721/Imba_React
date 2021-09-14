@@ -22,7 +22,6 @@ const useStyles = makeStyles((theme) => ({
   },
   jobsContainer: {
     padding: theme.spacing(2),
-    // margin: "auto",
     maxWidth: "100%",
     "&:hover": {
       backgroundColor: "rgba(145, 195, 221, .2)",
@@ -53,7 +52,6 @@ const useStyles = makeStyles((theme) => ({
 
   pagination: {
     display: "flex",
-    // alignItems: "center",
     justifyContent: "center",
     marginBottom: 50,
   },
@@ -64,6 +62,7 @@ const JobSearch = () => {
 
   const dbApi = [
     {
+      id: "1",
       Facility: "Johns Hopkins Bayview Medical Center.",
       Description: "Emergency Room RN Nights",
       City: "Baltimore",
@@ -75,6 +74,7 @@ const JobSearch = () => {
       Length: "12 Weeks",
     },
     {
+      id: "2",
       Facility: "Johns Hopkins Bayview Medical Center.",
       Description: "Emergency Room RN Nights",
       City: "Chicago",
@@ -86,6 +86,7 @@ const JobSearch = () => {
       Length: "4 Weeks",
     },
     {
+      id: "3",
       Facility: "Johns Hopkins Bayview Medical Center.",
       Description: "Emergency Room RN Nights",
       City: "Baltimore",
@@ -97,6 +98,7 @@ const JobSearch = () => {
       Length: "12 Weeks",
     },
     {
+      id: "4",
       Facility: "Johns Hopkins Bayview Medical Center.",
       Description: "Emergency Room RN Nights",
       City: "Baltimore",
@@ -108,6 +110,7 @@ const JobSearch = () => {
       Length: "12 Weeks",
     },
     {
+      id: "5",
       Facility: "Johns Hopkins Bayview Medical Center.",
       Description: "Emergency Room RN Nights",
       City: "Baltimore",
@@ -119,6 +122,7 @@ const JobSearch = () => {
       Length: "12 Weeks",
     },
     {
+      id: "6",
       Facility: "Johns Hopkins Bayview Medical Center.",
       Description: "Emergency Room RN Nights",
       City: "Baltimore",
@@ -130,6 +134,7 @@ const JobSearch = () => {
       Length: "12 Weeks",
     },
     {
+      id: "7",
       Facility: "Johns Hopkins Bayview Medical Center.",
       Description: "Emergency Room RN Nights",
       City: "Baltimore",
@@ -141,6 +146,7 @@ const JobSearch = () => {
       Length: "12 Weeks",
     },
     {
+      id: "8",
       Facility: "Johns Hopkins Bayview Medical Center.",
       Description: "Emergency Room RN Nights",
       City: "Baltimore",
@@ -152,6 +158,7 @@ const JobSearch = () => {
       Length: "12 Weeks",
     },
     {
+      id: "9",
       Facility: "Johns Hopkins Bayview Medical Center.",
       Description: "Emergency Room RN Nights",
       City: "Baltimore",
@@ -167,9 +174,9 @@ const JobSearch = () => {
   return (
     <Container>
       {/* FILTERS AND DASHBOARD */}
-      {/* <Paper elevation={1} className={classes.filtersWrapper}>
+      <Paper elevation={1} className={classes.filtersWrapper}>
         Filters Sort
-      </Paper> */}
+      </Paper>
 
       {/* GRID ITEM */}
       {dbApi.map((Job) => (
