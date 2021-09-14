@@ -31,7 +31,7 @@ const theme = createTheme({
     fontWeightMedium: 600,
     fontWeightBold: 700,
     h2: {
-      fontSize: "3.2rem",
+      fontSize: "3.5rem",
       fontFamily: "Roboto",
       fontWeight: "bold",
     },

@@ -5,6 +5,7 @@ import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import ButtonBase from "@material-ui/core/ButtonBase";
+import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({
   jobsWrapper: {
@@ -16,6 +17,9 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     // margin: "auto",
     maxWidth: "100%",
+    "&:hover": {
+      backgroundColor: "rgba(145, 195, 221, .2)",
+    },
   },
   image: {
     // width: 200,
@@ -54,13 +58,13 @@ const JobSearch = () => {
     {
       Facility: "Johns Hopkins Bayview Medical Center.",
       Description: "Emergency Room RN Nights",
-      City: "Baltimore",
-      State: "MD",
+      City: "Chicago",
+      State: "IL",
       Image: "https://source.unsplash.com/1200x800",
       Proffesion: "Nurse",
-      Shift: "Night, 3x12",
-      Start: "November, 5",
-      Length: "12 Weeks",
+      Shift: "Day, 4x12",
+      Start: "ASAP",
+      Length: "4 Weeks",
     },
     {
       Facility: "Johns Hopkins Bayview Medical Center.",
@@ -211,13 +215,9 @@ const JobSearch = () => {
                     </div>
                   </Grid>
                   <Grid item>
-                    <Typography
-                      variant="body2"
-                      color="secondary"
-                      style={{ cursor: "pointer" }}
-                    >
-                      I'm Interested
-                    </Typography>
+                    <Button variant="contained" color="secondary">
+                      I'm interested
+                    </Button>
                   </Grid>
                 </Grid>
                 <Grid item>

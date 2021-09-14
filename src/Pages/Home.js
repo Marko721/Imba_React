@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     bottom: 0,
     right: 0,
     left: 0,
-    backgroundColor: "rgba(0,0,0,.1)",
+    backgroundColor: "rgba(0,0,0,.15)",
   },
   banner: {
     // backgroundSize: "cover",
@@ -148,7 +148,7 @@ const Home = () => {
   return (
     <div>
       {/* #################################### Main Banner ######################################################################## */}
-      <Paper className={classes.bannerContainer} elevation={3}>
+      <Paper className={classes.bannerContainer} elevation={0}>
         <img src={bannerImg} className={classes.banner} />
         <div className={classes.overlay} />
         <Container>
@@ -157,7 +157,7 @@ const Home = () => {
             className={classes.bannerTextContainer}
             style={
               bannerImg == BannerImagePc
-                ? { top: "21%", left: "5%" }
+                ? { top: "17%", left: "7%" }
                 : { top: "5%", left: "7%" }
             }
           >
