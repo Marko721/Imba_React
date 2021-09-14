@@ -68,7 +68,7 @@ const JobSearch = () => {
       Description: "Emergency Room RN Nights",
       City: "Baltimore",
       State: "MD",
-      Image: "https://source.unsplash.com/1200x800",
+      Image: "https://source.unsplash.com/1200x800/?city,landscape",
       Proffesion: "Nurse",
       Shift: "Night, 3x12",
       Start: "November, 5",
@@ -79,7 +79,7 @@ const JobSearch = () => {
       Description: "Emergency Room RN Nights",
       City: "Chicago",
       State: "IL",
-      Image: "https://source.unsplash.com/1200x800",
+      Image: "https://source.unsplash.com/1200x800/?city,landscape",
       Proffesion: "Nurse",
       Shift: "Day, 4x12",
       Start: "ASAP",
@@ -90,7 +90,7 @@ const JobSearch = () => {
       Description: "Emergency Room RN Nights",
       City: "Baltimore",
       State: "MD",
-      Image: "https://source.unsplash.com/1200x800",
+      Image: "https://source.unsplash.com/1200x800/?city,landscape",
       Proffesion: "Nurse",
       Shift: "Night, 3x12",
       Start: "November, 5",
@@ -101,7 +101,7 @@ const JobSearch = () => {
       Description: "Emergency Room RN Nights",
       City: "Baltimore",
       State: "MD",
-      Image: "https://source.unsplash.com/1200x800",
+      Image: "https://source.unsplash.com/1200x800/?city,landscape",
       Proffesion: "Nurse",
       Shift: "Night, 3x12",
       Start: "November, 5",
@@ -112,7 +112,7 @@ const JobSearch = () => {
       Description: "Emergency Room RN Nights",
       City: "Baltimore",
       State: "MD",
-      Image: "https://source.unsplash.com/1200x800",
+      Image: "https://source.unsplash.com/1200x800/?city,landscape",
       Proffesion: "Nurse",
       Shift: "Night, 3x12",
       Start: "November, 5",
@@ -123,7 +123,7 @@ const JobSearch = () => {
       Description: "Emergency Room RN Nights",
       City: "Baltimore",
       State: "MD",
-      Image: "https://source.unsplash.com/1200x800",
+      Image: "https://source.unsplash.com/1200x800/?city,landscape",
       Proffesion: "Nurse",
       Shift: "Night, 3x12",
       Start: "November, 5",
@@ -134,7 +134,7 @@ const JobSearch = () => {
       Description: "Emergency Room RN Nights",
       City: "Baltimore",
       State: "MD",
-      Image: "https://source.unsplash.com/1200x800",
+      Image: "https://source.unsplash.com/1200x800/?city,landscape",
       Proffesion: "Nurse",
       Shift: "Night, 3x12",
       Start: "November, 5",
@@ -145,7 +145,7 @@ const JobSearch = () => {
       Description: "Emergency Room RN Nights",
       City: "Baltimore",
       State: "MD",
-      Image: "https://source.unsplash.com/1200x800",
+      Image: "https://source.unsplash.com/1200x800/?city,landscape",
       Proffesion: "Nurse",
       Shift: "Night, 3x12",
       Start: "November, 5",
@@ -156,7 +156,7 @@ const JobSearch = () => {
       Description: "Emergency Room RN Nights",
       City: "Baltimore",
       State: "MD",
-      Image: "https://source.unsplash.com/1200x800",
+      Image: "https://source.unsplash.com/1200x800/?city,landscape",
       Proffesion: "Nurse",
       Shift: "Night, 3x12",
       Start: "November, 5",
@@ -167,9 +167,9 @@ const JobSearch = () => {
   return (
     <Container>
       {/* FILTERS AND DASHBOARD */}
-      <Paper elevation={1} className={classes.filtersWrapper}>
+      {/* <Paper elevation={1} className={classes.filtersWrapper}>
         Filters Sort
-      </Paper>
+      </Paper> */}
 
       {/* GRID ITEM */}
       {dbApi.map((Job) => (
@@ -256,7 +256,7 @@ const JobSearch = () => {
       <Pagination
         count={10}
         shape="rounded"
-        size="large"
+        size="medium"
         className={classes.pagination}
       />
     </Container>
