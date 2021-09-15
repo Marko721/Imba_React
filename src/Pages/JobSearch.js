@@ -16,9 +16,14 @@ const useStyles = makeStyles((theme) => ({
   //FILTERS SECTION
   filtersWrapper: {
     marginTop: 50,
+    padding: 15,
+    "& button": {
+      width: "100%",
+      height: "100%",
+    },
   },
   formControl: {
-    margin: theme.spacing(1),
+    // margin: theme.spacing(1),
     minWidth: 120,
     width: "100%",
   },
@@ -71,18 +76,11 @@ const JobSearch = () => {
 
   const [state, setState] = React.useState({
     specialty: "",
-    name: "hai",
+    location: "",
+    shift: "",
+    length: "",
+    pay: 5000,
   });
-
-  const handleChange = (event) => {
-    const name = event.target.name;
-    setState({
-      ...state,
-      [name]: event.target.value,
-    });
-
-    console.log(state);
-  };
 
   const dbApi = [
     {
@@ -195,17 +193,40 @@ const JobSearch = () => {
     },
   ];
 
+  const handleChange = (event) => {
+    const name = event.target.name;
+    setState({
+      ...state,
+      [name]: event.target.value,
+    });
+
+    console.log(state);
+  };
+
+  const handleFilterReset = () => {
+    // setState({
+    //   ...state,
+    //   [specialty]: "",
+    //   [location]: "",
+    //   [shift]: "",
+    //   [length]: "",
+    //   [pay]: 5000,
+    // });
+  };
+
   return (
     <Container>
       {/* FILTERS AND DASHBOARD */}
 
       {/* SPECIALTY */}
       <Paper elevation={1} className={classes.filtersWrapper}>
-        <Grid container spacing={2}>
-          <Grid item xs={12} sm={12} md={1}>
-            <Button variant="outlined">Clear</Button>
-          </Grid>
-
+        <Grid
+          container
+          spacing={2}
+          direction="row"
+          justifyContent="center"
+          alignItems="center"
+        >
           <Grid item xs={12} sm={6} md={2}>
             <FormControl variant="outlined" className={classes.formControl}>
               <InputLabel htmlFor="specialties" color="secondary">
@@ -233,24 +254,24 @@ const JobSearch = () => {
           {/* LOCATION */}
           <Grid item xs={12} sm={6} md={2}>
             <FormControl variant="outlined" className={classes.formControl}>
-              <InputLabel htmlFor="specialties" color="secondary">
+              <InputLabel htmlFor="location" color="secondary">
                 Location
               </InputLabel>
               <Select
                 native
                 color="secondary"
-                value={state.specialty}
+                value={state.location}
                 onChange={handleChange}
-                label="Specialties"
+                label="Location"
                 inputProps={{
-                  name: "specialty",
-                  id: "specialties",
+                  name: "location",
+                  id: "location",
                 }}
               >
                 <option aria-label="None" value="" />
-                <option value={"Nurse"}>Nurse</option>
-                <option value={"Doctor"}>Doctor</option>
-                <option value={"ICU"}>ICU</option>
+                <option value={"Chicago, IL"}>Chicago, IL</option>
+                <option value={"Florida"}>Florida</option>
+                <option value={"Miami, FL"}>Miami, Fl</option>
               </Select>
             </FormControl>
           </Grid>
@@ -258,24 +279,24 @@ const JobSearch = () => {
           {/* SHIFT */}
           <Grid item xs={12} sm={6} md={2}>
             <FormControl variant="outlined" className={classes.formControl}>
-              <InputLabel htmlFor="specialties" color="secondary">
-                Shifts
+              <InputLabel htmlFor="shift" color="secondary">
+                Shift
               </InputLabel>
               <Select
                 native
                 color="secondary"
-                value={state.specialty}
+                value={state.shift}
                 onChange={handleChange}
-                label="Specialties"
+                label="Shift"
                 inputProps={{
-                  name: "specialty",
-                  id: "specialties",
+                  name: "shift",
+                  id: "shift",
                 }}
               >
                 <option aria-label="None" value="" />
-                <option value={"Nurse"}>Nurse</option>
-                <option value={"Doctor"}>Doctor</option>
-                <option value={"ICU"}>ICU</option>
+                <option value={"Day, 4x12"}>Day, 4x12</option>
+                <option value={"Night, 3x12"}>Night, 3x12</option>
+                <option value={"Night, 5x12"}>Night, 5x12</option>
               </Select>
             </FormControl>
           </Grid>
@@ -283,24 +304,24 @@ const JobSearch = () => {
           {/* LENGHT */}
           <Grid item xs={12} sm={6} md={2}>
             <FormControl variant="outlined" className={classes.formControl}>
-              <InputLabel htmlFor="specialties" color="secondary">
-                Shifts
+              <InputLabel htmlFor="length" color="secondary">
+                Length
               </InputLabel>
               <Select
                 native
                 color="secondary"
-                value={state.specialty}
+                value={state.length}
                 onChange={handleChange}
-                label="Specialties"
+                label="Length"
                 inputProps={{
-                  name: "specialty",
-                  id: "specialties",
+                  name: "length",
+                  id: "length",
                 }}
               >
                 <option aria-label="None" value="" />
-                <option value={"Nurse"}>Nurse</option>
-                <option value={"Doctor"}>Doctor</option>
-                <option value={"ICU"}>ICU</option>
+                <option value={"4 weeks"}>4 weeks</option>
+                <option value={"8 weeks"}>8 weeks</option>
+                <option value={"12 weeks"}>12 weeks</option>
               </Select>
             </FormControl>
           </Grid>
@@ -308,29 +329,34 @@ const JobSearch = () => {
           {/* PAY */}
           <Grid item xs={12} sm={6} md={2}>
             <FormControl variant="outlined" className={classes.formControl}>
-              <InputLabel htmlFor="specialties" color="secondary">
-                Shifts
+              <InputLabel htmlFor="pay" color="secondary">
+                Pay
               </InputLabel>
               <Select
                 native
                 color="secondary"
-                value={state.specialty}
+                value={state.pay}
                 onChange={handleChange}
-                label="Specialties"
+                label="Pay"
                 inputProps={{
-                  name: "specialty",
-                  id: "specialties",
+                  name: "pay",
+                  id: "pay",
                 }}
               >
                 <option aria-label="None" value="" />
-                <option value={"Nurse"}>Nurse</option>
-                <option value={"Doctor"}>Doctor</option>
-                <option value={"ICU"}>ICU</option>
+                <option value={"$2000/week"}>$2000/week</option>
+                <option value={"$4000/week"}>$4000/week</option>
+                <option value={"$5000/week"}>$5000/week</option>
               </Select>
             </FormControl>
           </Grid>
 
           {/* SEARCH AND RESET */}
+          <Grid item xs={12} sm={12} md={1}>
+            <Button variant="outlined" onClick={handleFilterReset()}>
+              Clear
+            </Button>
+          </Grid>
           <Grid item xs={12} sm={12} md={1}>
             <Button variant="contained" color="secondary">
               Search
