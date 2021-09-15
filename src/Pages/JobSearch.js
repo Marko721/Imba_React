@@ -7,11 +7,20 @@ import Typography from "@material-ui/core/Typography";
 import ButtonBase from "@material-ui/core/ButtonBase";
 import Button from "@material-ui/core/Button";
 import Pagination from "@material-ui/lab/Pagination";
+import InputLabel from "@material-ui/core/InputLabel";
+import FormHelperText from "@material-ui/core/FormHelperText";
+import FormControl from "@material-ui/core/FormControl";
+import Select from "@material-ui/core/Select";
 
 const useStyles = makeStyles((theme) => ({
   //FILTERS SECTION
   filtersWrapper: {
     marginTop: 50,
+  },
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 120,
+    width: "100%",
   },
 
   // JOBS SECTION
@@ -60,6 +69,21 @@ const useStyles = makeStyles((theme) => ({
 const JobSearch = () => {
   const classes = useStyles();
 
+  const [state, setState] = React.useState({
+    specialty: "",
+    name: "hai",
+  });
+
+  const handleChange = (event) => {
+    const name = event.target.name;
+    setState({
+      ...state,
+      [name]: event.target.value,
+    });
+
+    console.log(state);
+  };
+
   const dbApi = [
     {
       id: "1",
@@ -68,7 +92,7 @@ const JobSearch = () => {
       City: "Baltimore",
       State: "MD",
       Image: "https://source.unsplash.com/1200x800/?city,landscape",
-      Proffesion: "Nurse",
+      Specialty: "Nurse",
       Shift: "Night, 3x12",
       Start: "November, 5",
       Length: "12 Weeks",
@@ -80,7 +104,7 @@ const JobSearch = () => {
       City: "Chicago",
       State: "IL",
       Image: "https://source.unsplash.com/1200x800/?city,landscape",
-      Proffesion: "Nurse",
+      Specialty: "Nurse",
       Shift: "Day, 4x12",
       Start: "ASAP",
       Length: "4 Weeks",
@@ -92,7 +116,7 @@ const JobSearch = () => {
       City: "Baltimore",
       State: "MD",
       Image: "https://source.unsplash.com/1200x800/?city,landscape",
-      Proffesion: "Nurse",
+      Specialty: "Nurse",
       Shift: "Night, 3x12",
       Start: "November, 5",
       Length: "12 Weeks",
@@ -104,7 +128,7 @@ const JobSearch = () => {
       City: "Baltimore",
       State: "MD",
       Image: "https://source.unsplash.com/1200x800/?city,landscape",
-      Proffesion: "Nurse",
+      Specialty: "Nurse",
       Shift: "Night, 3x12",
       Start: "November, 5",
       Length: "12 Weeks",
@@ -116,7 +140,7 @@ const JobSearch = () => {
       City: "Baltimore",
       State: "MD",
       Image: "https://source.unsplash.com/1200x800/?city,landscape",
-      Proffesion: "Nurse",
+      Specialty: "Nurse",
       Shift: "Night, 3x12",
       Start: "November, 5",
       Length: "12 Weeks",
@@ -128,7 +152,7 @@ const JobSearch = () => {
       City: "Baltimore",
       State: "MD",
       Image: "https://source.unsplash.com/1200x800/?city,landscape",
-      Proffesion: "Nurse",
+      Specialty: "Nurse",
       Shift: "Night, 3x12",
       Start: "November, 5",
       Length: "12 Weeks",
@@ -140,7 +164,7 @@ const JobSearch = () => {
       City: "Baltimore",
       State: "MD",
       Image: "https://source.unsplash.com/1200x800/?city,landscape",
-      Proffesion: "Nurse",
+      Specialty: "Nurse",
       Shift: "Night, 3x12",
       Start: "November, 5",
       Length: "12 Weeks",
@@ -152,7 +176,7 @@ const JobSearch = () => {
       City: "Baltimore",
       State: "MD",
       Image: "https://source.unsplash.com/1200x800/?city,landscape",
-      Proffesion: "Nurse",
+      Specialty: "Nurse",
       Shift: "Night, 3x12",
       Start: "November, 5",
       Length: "12 Weeks",
@@ -164,7 +188,7 @@ const JobSearch = () => {
       City: "Baltimore",
       State: "MD",
       Image: "https://source.unsplash.com/1200x800/?city,landscape",
-      Proffesion: "Nurse",
+      Specialty: "Nurse",
       Shift: "Night, 3x12",
       Start: "November, 5",
       Length: "12 Weeks",
@@ -174,15 +198,152 @@ const JobSearch = () => {
   return (
     <Container>
       {/* FILTERS AND DASHBOARD */}
+
+      {/* SPECIALTY */}
       <Paper elevation={1} className={classes.filtersWrapper}>
-        Filters Sort
+        <Grid container spacing={2}>
+          <Grid item xs={12} sm={12} md={1}>
+            <Button variant="outlined">Clear</Button>
+          </Grid>
+
+          <Grid item xs={12} sm={6} md={2}>
+            <FormControl variant="outlined" className={classes.formControl}>
+              <InputLabel htmlFor="specialties" color="secondary">
+                Specialties
+              </InputLabel>
+              <Select
+                native
+                color="secondary"
+                value={state.specialty}
+                onChange={handleChange}
+                label="Specialties"
+                inputProps={{
+                  name: "specialty",
+                  id: "specialties",
+                }}
+              >
+                <option aria-label="None" value="" />
+                <option value={"Nurse"}>Nurse</option>
+                <option value={"Doctor"}>Doctor</option>
+                <option value={"ICU"}>ICU</option>
+              </Select>
+            </FormControl>
+          </Grid>
+
+          {/* LOCATION */}
+          <Grid item xs={12} sm={6} md={2}>
+            <FormControl variant="outlined" className={classes.formControl}>
+              <InputLabel htmlFor="specialties" color="secondary">
+                Location
+              </InputLabel>
+              <Select
+                native
+                color="secondary"
+                value={state.specialty}
+                onChange={handleChange}
+                label="Specialties"
+                inputProps={{
+                  name: "specialty",
+                  id: "specialties",
+                }}
+              >
+                <option aria-label="None" value="" />
+                <option value={"Nurse"}>Nurse</option>
+                <option value={"Doctor"}>Doctor</option>
+                <option value={"ICU"}>ICU</option>
+              </Select>
+            </FormControl>
+          </Grid>
+
+          {/* SHIFT */}
+          <Grid item xs={12} sm={6} md={2}>
+            <FormControl variant="outlined" className={classes.formControl}>
+              <InputLabel htmlFor="specialties" color="secondary">
+                Shifts
+              </InputLabel>
+              <Select
+                native
+                color="secondary"
+                value={state.specialty}
+                onChange={handleChange}
+                label="Specialties"
+                inputProps={{
+                  name: "specialty",
+                  id: "specialties",
+                }}
+              >
+                <option aria-label="None" value="" />
+                <option value={"Nurse"}>Nurse</option>
+                <option value={"Doctor"}>Doctor</option>
+                <option value={"ICU"}>ICU</option>
+              </Select>
+            </FormControl>
+          </Grid>
+
+          {/* LENGHT */}
+          <Grid item xs={12} sm={6} md={2}>
+            <FormControl variant="outlined" className={classes.formControl}>
+              <InputLabel htmlFor="specialties" color="secondary">
+                Shifts
+              </InputLabel>
+              <Select
+                native
+                color="secondary"
+                value={state.specialty}
+                onChange={handleChange}
+                label="Specialties"
+                inputProps={{
+                  name: "specialty",
+                  id: "specialties",
+                }}
+              >
+                <option aria-label="None" value="" />
+                <option value={"Nurse"}>Nurse</option>
+                <option value={"Doctor"}>Doctor</option>
+                <option value={"ICU"}>ICU</option>
+              </Select>
+            </FormControl>
+          </Grid>
+
+          {/* PAY */}
+          <Grid item xs={12} sm={6} md={2}>
+            <FormControl variant="outlined" className={classes.formControl}>
+              <InputLabel htmlFor="specialties" color="secondary">
+                Shifts
+              </InputLabel>
+              <Select
+                native
+                color="secondary"
+                value={state.specialty}
+                onChange={handleChange}
+                label="Specialties"
+                inputProps={{
+                  name: "specialty",
+                  id: "specialties",
+                }}
+              >
+                <option aria-label="None" value="" />
+                <option value={"Nurse"}>Nurse</option>
+                <option value={"Doctor"}>Doctor</option>
+                <option value={"ICU"}>ICU</option>
+              </Select>
+            </FormControl>
+          </Grid>
+
+          {/* SEARCH AND RESET */}
+          <Grid item xs={12} sm={12} md={1}>
+            <Button variant="contained" color="secondary">
+              Search
+            </Button>
+          </Grid>
+        </Grid>
       </Paper>
 
       {/* GRID ITEM */}
       {dbApi.map((Job) => (
         <div className={classes.jobsWrapper} key={Job.id}>
           <Paper className={classes.jobsContainer} elevation={1}>
-            <Grid container spacing={2}>
+            <Grid container spacing={2} alignContent="center">
               <Grid item xs={12} sm={4} md={3}>
                 <ButtonBase className={classes.image}>
                   <img
@@ -192,7 +353,7 @@ const JobSearch = () => {
                   />
                 </ButtonBase>
               </Grid>
-              <Grid item xs={12} sm={8} md={9} container alignContent="center">
+              <Grid item xs={12} sm={8} md={9} container>
                 <Grid item xs container direction="column" spacing={2}>
                   <Grid item xs>
                     <Typography gutterBottom>{Job.Facility}</Typography>
@@ -207,7 +368,7 @@ const JobSearch = () => {
                         color="textSecondary"
                         className={classes.iconText}
                       >
-                        {Job.Proffesion}
+                        {Job.Specialty}
                       </Typography>
                     </div>
                     <div className={classes.iconTextContainer}>
