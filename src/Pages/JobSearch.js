@@ -448,7 +448,7 @@ const JobSearch = () => {
       ))}
 
       <Pagination
-        count={10}
+        count={100}
         shape="rounded"
         size="medium"
         className={classes.pagination}
