@@ -363,6 +363,43 @@ const JobSearch = () => {
             </Button>
           </Grid>
         </Grid>
+        {/* NUMBER AND SORT */}
+        <Grid
+          container
+          spacing={2}
+          direction="row"
+          justifyContent="space-between"
+          alignItems="flex-end"
+        >
+          {/* Number of results */}
+          <Grid item xs={6}>
+            <Typography>Search through 1245 results</Typography>
+          </Grid>
+          <Grid item xs={4} sm={4} md={2}>
+            <FormControl className={classes.formControl}>
+              <InputLabel htmlFor="sort" color="secondary">
+                Sort by
+              </InputLabel>
+              <Select
+                native
+                color="secondary"
+                value={state.sort}
+                onChange={handleChange}
+                label="Sort"
+                inputProps={{
+                  name: "sort",
+                  id: "sort",
+                }}
+              >
+                <option aria-label="None" value="" />
+                <option value={"Name"}>Name</option>
+                <option value={"Pay_high"}>Pay (High to low)</option>
+                <option value={"Pay_low"}>Pay (Low to high)</option>
+                <option value={"Length"}>Length</option>
+              </Select>
+            </FormControl>
+          </Grid>
+        </Grid>
       </Paper>
 
       {/* GRID ITEM */}
