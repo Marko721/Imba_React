@@ -15,6 +15,7 @@ import Select from "@material-ui/core/Select";
 const useStyles = makeStyles((theme) => ({
   //FILTERS SECTION
   filtersWrapper: {
+    backgroundColor: "rgba(145, 195, 221, .15)",
     marginTop: 50,
     padding: 15,
     "& button": {
@@ -373,7 +374,9 @@ const JobSearch = () => {
         >
           {/* Number of results */}
           <Grid item xs={6}>
-            <Typography>Search through 1245 results</Typography>
+            <Typography variant="subtitle2" color="secondary">
+              Search through 1245 results
+            </Typography>
           </Grid>
           <Grid item xs={4} sm={4} md={2}>
             <FormControl className={classes.formControl}>
