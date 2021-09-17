@@ -9,7 +9,7 @@ import Pagination from "@material-ui/lab/Pagination";
 import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
-import JobCard from "../Components/JobCard";
+import JobCards from "../Components/JobCards";
 
 const useStyles = makeStyles((theme) => ({
   //FILTERS SECTION
@@ -188,7 +188,6 @@ const JobSearch = () => {
   return (
     <Container>
       {/* FILTERS AND DASHBOARD */}
-
       {/* SPECIALTY */}
       <Paper elevation={1} className={classes.filtersWrapper}>
         <Typography variant="subtitle1" gutterBottom>
@@ -381,7 +380,7 @@ const JobSearch = () => {
       {/* JOB GRID ITEM */}
       {dbApi.map((Job) => (
         <div className={classes.jobsWrapper} key={Job.id}>
-          <JobCard Job={Job} />
+          <JobCards Job={Job} />
         </div>
       ))}
 

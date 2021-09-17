@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const JobCard = ({ Job }) => {
+const JobCards = ({ Job }) => {
   const classes = useStyles();
   const history = useHistory();
   const location = useLocation();
@@ -123,4 +123,4 @@ const JobCard = ({ Job }) => {
   );
 };
 
-export default JobCard;
+export default JobCards;
