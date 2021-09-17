@@ -1,8 +1,11 @@
 import { useParams } from "react-router";
+import Data from "../Components/Data";
 
 const JobDetails = () => {
   const { id } = useParams();
-  console.log(id);
+  const Job = Data.jobs[id - 1];
+  console.log(Job);
+  //   console.log(Job[id - 1]);
   // console.log(id);
   //   const {
   //     data: blog,
@@ -12,7 +15,7 @@ const JobDetails = () => {
 
   return (
     <div>
-      <div></div>
+      <div>{Job.Facility}</div>
     </div>
   );
 };

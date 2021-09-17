@@ -10,6 +10,7 @@ import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import JobCards from "../Components/JobCards";
+import Data from "../Components/Data";
 
 const useStyles = makeStyles((theme) => ({
   //FILTERS SECTION
@@ -36,6 +37,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const JobSearch = () => {
+  const jobsData = Data.jobs;
   const classes = useStyles();
 
   const [state, setState] = React.useState({
@@ -45,117 +47,6 @@ const JobSearch = () => {
     length: "",
     pay: 5000,
   });
-
-  const jobsData = [
-    {
-      id: "1",
-      Facility: "Johns Hopkins Bayview Medical Center.",
-      Description: "Emergency Room RN Nights",
-      City: "Baltimore",
-      State: "MD",
-      Image: "https://source.unsplash.com/1200x800/?city,landscape",
-      Specialty: "Nurse",
-      Shift: "Night, 3x12",
-      Start: "November, 5",
-      Length: "12 Weeks",
-    },
-    {
-      id: "2",
-      Facility: "Johns Hopkins Bayview Medical Center.",
-      Description: "Emergency Room RN Nights",
-      City: "Chicago",
-      State: "IL",
-      Image: "https://source.unsplash.com/1200x800/?city,landscape",
-      Specialty: "Nurse",
-      Shift: "Day, 4x12",
-      Start: "ASAP",
-      Length: "4 Weeks",
-    },
-    {
-      id: "3",
-      Facility: "Johns Hopkins Bayview Medical Center.",
-      Description: "Emergency Room RN Nights",
-      City: "Baltimore",
-      State: "MD",
-      Image: "https://source.unsplash.com/1200x800/?city,landscape",
-      Specialty: "Nurse",
-      Shift: "Night, 3x12",
-      Start: "November, 5",
-      Length: "12 Weeks",
-    },
-    {
-      id: "4",
-      Facility: "Johns Hopkins Bayview Medical Center.",
-      Description: "Emergency Room RN Nights",
-      City: "Baltimore",
-      State: "MD",
-      Image: "https://source.unsplash.com/1200x800/?city,landscape",
-      Specialty: "Nurse",
-      Shift: "Night, 3x12",
-      Start: "November, 5",
-      Length: "12 Weeks",
-    },
-    {
-      id: "5",
-      Facility: "Johns Hopkins Bayview Medical Center.",
-      Description: "Emergency Room RN Nights",
-      City: "Baltimore",
-      State: "MD",
-      Image: "https://source.unsplash.com/1200x800/?city,landscape",
-      Specialty: "Nurse",
-      Shift: "Night, 3x12",
-      Start: "November, 5",
-      Length: "12 Weeks",
-    },
-    {
-      id: "6",
-      Facility: "Johns Hopkins Bayview Medical Center.",
-      Description: "Emergency Room RN Nights",
-      City: "Baltimore",
-      State: "MD",
-      Image: "https://source.unsplash.com/1200x800/?city,landscape",
-      Specialty: "Nurse",
-      Shift: "Night, 3x12",
-      Start: "November, 5",
-      Length: "12 Weeks",
-    },
-    {
-      id: "7",
-      Facility: "Johns Hopkins Bayview Medical Center.",
-      Description: "Emergency Room RN Nights",
-      City: "Baltimore",
-      State: "MD",
-      Image: "https://source.unsplash.com/1200x800/?city,landscape",
-      Specialty: "Nurse",
-      Shift: "Night, 3x12",
-      Start: "November, 5",
-      Length: "12 Weeks",
-    },
-    {
-      id: "8",
-      Facility: "Johns Hopkins Bayview Medical Center.",
-      Description: "Emergency Room RN Nights",
-      City: "Baltimore",
-      State: "MD",
-      Image: "https://source.unsplash.com/1200x800/?city,landscape",
-      Specialty: "Nurse",
-      Shift: "Night, 3x12",
-      Start: "November, 5",
-      Length: "12 Weeks",
-    },
-    {
-      id: "9",
-      Facility: "Johns Hopkins Bayview Medical Center.",
-      Description: "Emergency Room RN Nights",
-      City: "Baltimore",
-      State: "MD",
-      Image: "https://source.unsplash.com/1200x800/?city,landscape",
-      Specialty: "Nurse",
-      Shift: "Night, 3x12",
-      Start: "November, 5",
-      Length: "12 Weeks",
-    },
-  ];
 
   const handleChange = (event) => {
     const name = event.target.name;
