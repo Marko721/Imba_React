@@ -5,6 +5,7 @@ import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import ButtonBase from "@material-ui/core/ButtonBase";
 import Button from "@material-ui/core/Button";
+import { useHistory, useLocation } from "react-router";
 
 const useStyles = makeStyles((theme) => ({
   jobsContainer: {
@@ -13,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       backgroundColor: "rgba(145, 195, 221, .2)",
     },
+    cursor: "pointer",
   },
   image: {
     // width: 200,
@@ -40,9 +42,15 @@ const useStyles = makeStyles((theme) => ({
 
 const JobCard = ({ Job }) => {
   const classes = useStyles();
+  const history = useHistory();
+  const location = useLocation();
 
   return (
-    <Paper className={classes.jobsContainer} elevation={1}>
+    <Paper
+      className={classes.jobsContainer}
+      elevation={1}
+      onClick={() => history.push(`/job/${Job.id}`)}
+    >
       <Grid container spacing={2} alignContent="center">
         <Grid item xs={12} sm={4} md={3}>
           <ButtonBase className={classes.image}>
