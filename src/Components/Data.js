@@ -2,7 +2,7 @@ const Data = {
   jobs: [
     {
       id: "1",
-      Facility: "Johns Hopkins Bayview Medical Center.",
+      Facility: "Johns Hopkins Bayview Medical Center",
       Description: "Emergency Room RN Nights",
       City: "Baltimore",
       State: "MD",
@@ -14,7 +14,7 @@ const Data = {
     },
     {
       id: "2",
-      Facility: "Johns Hopkins Bayview Medical Center.",
+      Facility: "Johns Hopkins Bayview Medical Center",
       Description: "Emergency Room RN Nights",
       City: "Chicago",
       State: "IL",
@@ -26,7 +26,7 @@ const Data = {
     },
     {
       id: "3",
-      Facility: "Johns Hopkins Bayview Medical Center.",
+      Facility: "Johns Hopkins Bayview Medical Center",
       Description: "Emergency Room RN Nights",
       City: "Baltimore",
       State: "MD",
@@ -38,7 +38,7 @@ const Data = {
     },
     {
       id: "4",
-      Facility: "Johns Hopkins Bayview Medical Center.",
+      Facility: "Johns Hopkins Bayview Medical Center",
       Description: "Emergency Room RN Nights",
       City: "Baltimore",
       State: "MD",
@@ -50,7 +50,7 @@ const Data = {
     },
     {
       id: "5",
-      Facility: "Johns Hopkins Bayview Medical Center.",
+      Facility: "Johns Hopkins Bayview Medical Center",
       Description: "Emergency Room RN Nights",
       City: "Baltimore",
       State: "MD",
@@ -62,7 +62,7 @@ const Data = {
     },
     {
       id: "6",
-      Facility: "Johns Hopkins Bayview Medical Center.",
+      Facility: "Johns Hopkins Bayview Medical Center",
       Description: "Emergency Room RN Nights",
       City: "Baltimore",
       State: "MD",
@@ -74,7 +74,7 @@ const Data = {
     },
     {
       id: "7",
-      Facility: "Johns Hopkins Bayview Medical Center.",
+      Facility: "Johns Hopkins Bayview Medical Center",
       Description: "Emergency Room RN Nights",
       City: "Baltimore",
       State: "MD",
@@ -86,7 +86,7 @@ const Data = {
     },
     {
       id: "8",
-      Facility: "Johns Hopkins Bayview Medical Center.",
+      Facility: "Johns Hopkins Bayview Medical Center",
       Description: "Emergency Room RN Nights",
       City: "Baltimore",
       State: "MD",
@@ -98,7 +98,7 @@ const Data = {
     },
     {
       id: "9",
-      Facility: "Johns Hopkins Bayview Medical Center.",
+      Facility: "Johns Hopkins Bayview Medical Center",
       Description: "Emergency Room RN Nights",
       City: "Baltimore",
       State: "MD",

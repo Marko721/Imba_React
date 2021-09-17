@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
   },
   image: {
     // width: 200,
-    height: "100%",
+    // height: "100%",
   },
   img: {
     margin: "auto",
@@ -63,13 +63,13 @@ const JobCards = ({ Jobs }) => {
             >
               <Grid container spacing={2} alignContent="center">
                 <Grid item xs={12} sm={4} md={3}>
-                  <ButtonBase className={classes.image}>
-                    <img
-                      className={classes.img}
-                      alt="job_search"
-                      src={Job.Image}
-                    />
-                  </ButtonBase>
+                  {/* <ButtonBase className={classes.image}> */}
+                  <img
+                    className={classes.img}
+                    alt="job_search"
+                    src={Job.Image}
+                  />
+                  {/* </ButtonBase> */}
                 </Grid>
                 <Grid item xs={12} sm={8} md={9} container>
                   <Grid item xs container direction="column" spacing={2}>
