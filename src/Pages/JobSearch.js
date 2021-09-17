@@ -28,13 +28,6 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
   },
 
-  // JOBS SECTION
-  jobsWrapper: {
-    flexGrow: 1,
-    marginTop: 25,
-    marginBottom: 25,
-  },
-
   pagination: {
     display: "flex",
     justifyContent: "center",
@@ -53,7 +46,7 @@ const JobSearch = () => {
     pay: 5000,
   });
 
-  const dbApi = [
+  const jobsData = [
     {
       id: "1",
       Facility: "Johns Hopkins Bayview Medical Center.",
@@ -378,11 +371,7 @@ const JobSearch = () => {
       </Paper>
 
       {/* JOB GRID ITEM */}
-      {dbApi.map((Job) => (
-        <div className={classes.jobsWrapper} key={Job.id}>
-          <JobCards Job={Job} />
-        </div>
-      ))}
+      <JobCards Jobs={jobsData} />
 
       <Pagination
         count={100}
