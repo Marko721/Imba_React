@@ -221,6 +221,9 @@ const JobSearch = () => {
 
       {/* SPECIALTY */}
       <Paper elevation={1} className={classes.filtersWrapper}>
+        <Typography variant="subtitle1" gutterBottom>
+          Filter by:
+        </Typography>
         <Grid
           container
           spacing={2}
