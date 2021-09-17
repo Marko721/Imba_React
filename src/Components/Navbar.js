@@ -110,10 +110,10 @@ const Navbar = () => {
       text: "Log in",
       path: "/login",
     },
-    {
-      text: "Register",
-      path: "/register",
-    },
+    // {
+    //   text: "Register",
+    //   path: "/register",
+    // },
     {
       text: "Jobs",
       path: "/job_search",
