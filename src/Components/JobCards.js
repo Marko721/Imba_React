@@ -55,7 +55,7 @@ const JobCards = ({ Jobs }) => {
     <div>
       {Jobs.map((Job) => (
         <div className={classes.jobsWrapper} key={Job.id}>
-          <Link to={`/jobs/` + Job.id}>
+          <Link to={`/jobs/` + Job.id} style={{ textDecoration: "none" }}>
             <Paper
               className={classes.jobsContainer}
               elevation={1}

@@ -23,13 +23,19 @@ const useStyles = makeStyles((theme) => ({
     height: "100%",
     padding: 20,
   },
+  iconTextContainer: {
+    display: "flex",
+  },
+  iconText: {
+    marginLeft: 5,
+  },
 }));
 
 const JobDetails = () => {
   const classes = useStyles();
   const { id } = useParams();
   const Job = Data.jobs[id - 1];
-  console.log(Job);
+  //   console.log(Job.Image);
   //   console.log(Job[id - 1]);
   // console.log(id);
   //   const {
@@ -45,7 +51,11 @@ const JobDetails = () => {
           <Typography variant="h4">{Job.Facility}</Typography>
           <Grid container spacing={5}>
             <Grid item xs={12} sm={8} md={8}>
-              <img className={classes.img} alt="job_search" src={Job.Image} />
+              <img
+                className={classes.img}
+                alt={`${Job.Facility}`}
+                src={Job.Image}
+              />
             </Grid>
             <Grid item xs={12} sm={4} md={4}>
               <Paper elevation={2} className={classes.jobRequirementsWrapper}>
