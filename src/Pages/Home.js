@@ -34,11 +34,13 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "rgba(0,0,0,.15)",
   },
   banner: {
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center center",
-    backgroundAttachment: "fixed",
-    maxWidth: "99.1vw",
+    // backgroundSize: "cover",
+    // backgroundRepeat: "no-repeat",
+    // backgroundPosition: "center center",
+    // backgroundAttachment: "fixed",
+    maxWidth: "100%",
+    height: "auto",
+    // maxHeight: "700px",
   },
   bannerTextContainer: {
     width: "80vw",

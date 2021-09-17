@@ -231,7 +231,7 @@ const JobSearch = () => {
           {/* Number of results */}
           <Grid item xs={6}>
             <Typography variant="subtitle2" color="secondary">
-              Search through 1245 results
+              Search 1245 results
             </Typography>
           </Grid>
           <Grid item xs={4} sm={4} md={2}>
