@@ -1,4 +1,17 @@
 const Data = {
+  users: [
+    {
+      id: "1",
+      Role: "admin",
+      Name: "Marko",
+      Lastname: "Popovic",
+      Password: "3r4fk4g5904t",
+      Email: "pop@gmail.com",
+      Phone: "+1243303958",
+      Jobs_applied: [13, 123, 442, 43, 223],
+    },
+  ],
+
   jobs: [
     {
       id: "1",
@@ -18,6 +31,15 @@ const Data = {
       Certification: "BLS Certification",
       Experience: "2 Years of RN Experience",
       Specialty_Experience: "1 Year of Oncology Specialty",
+    },
+  ],
+
+  userJobs: [
+    {
+      id: 1,
+      User_id: 32,
+      Job_id: 143,
+      Date: "Decembar 3, 2021 - 14:23",
     },
   ],
 };
