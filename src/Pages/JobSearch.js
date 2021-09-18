@@ -41,11 +41,11 @@ const JobSearch = () => {
   const classes = useStyles();
 
   const [state, setState] = React.useState({
+    proffesion: "",
     specialty: "",
     location: "",
     shift: "",
     length: "",
-    pay: 5000,
   });
 
   const handleChange = (event) => {
@@ -72,7 +72,7 @@ const JobSearch = () => {
   return (
     <Container>
       {/* FILTERS AND DASHBOARD */}
-      {/* SPECIALTY */}
+
       <Paper elevation={1} className={classes.filtersWrapper}>
         <Typography variant="subtitle1" gutterBottom>
           Filter by:
@@ -84,6 +84,32 @@ const JobSearch = () => {
           justifyContent="center"
           alignItems="center"
         >
+          {/* Proffesion */}
+          <Grid item xs={12} sm={6} md={2}>
+            <FormControl variant="outlined" className={classes.formControl}>
+              <InputLabel htmlFor="proffesion" color="secondary">
+                Proffesion
+              </InputLabel>
+              <Select
+                native
+                color="secondary"
+                value={state.proffesion}
+                onChange={handleChange}
+                label="Proffesion"
+                inputProps={{
+                  name: "proffesion",
+                  id: "proffesion",
+                }}
+              >
+                <option aria-label="None" value="" />
+                <option value={"Nursing"}>Nursing</option>
+                <option value={"Doctor"}>Doctor</option>
+                <option value={"Local"}>Local</option>
+              </Select>
+            </FormControl>
+          </Grid>
+
+          {/* SPECIALTY */}
           <Grid item xs={12} sm={6} md={2}>
             <FormControl variant="outlined" className={classes.formControl}>
               <InputLabel htmlFor="specialties" color="secondary">
@@ -101,7 +127,7 @@ const JobSearch = () => {
                 }}
               >
                 <option aria-label="None" value="" />
-                <option value={"Nurse"}>Nurse</option>
+                <option value={"Anesteziology"}>Anesteziology</option>
                 <option value={"Doctor"}>Doctor</option>
                 <option value={"ICU"}>ICU</option>
               </Select>
@@ -183,31 +209,6 @@ const JobSearch = () => {
             </FormControl>
           </Grid>
 
-          {/* PAY */}
-          <Grid item xs={12} sm={6} md={2}>
-            <FormControl variant="outlined" className={classes.formControl}>
-              <InputLabel htmlFor="pay" color="secondary">
-                Pay
-              </InputLabel>
-              <Select
-                native
-                color="secondary"
-                value={state.pay}
-                onChange={handleChange}
-                label="Pay"
-                inputProps={{
-                  name: "pay",
-                  id: "pay",
-                }}
-              >
-                <option aria-label="None" value="" />
-                <option value={"$2000/week"}>$2000/week</option>
-                <option value={"$4000/week"}>$4000/week</option>
-                <option value={"$5000/week"}>$5000/week</option>
-              </Select>
-            </FormControl>
-          </Grid>
-
           {/* SEARCH AND RESET */}
           <Grid item xs={12} sm={12} md={1}>
             <Button variant="outlined" onClick={handleFilterReset()}>
@@ -251,10 +252,9 @@ const JobSearch = () => {
                 }}
               >
                 <option aria-label="None" value="" />
+                <option value={"New"}>Newest</option>
                 <option value={"Name"}>Name</option>
                 <option value={"Pay_high"}>Pay (High to low)</option>
-                <option value={"Pay_low"}>Pay (Low to high)</option>
-                <option value={"Length"}>Length</option>
               </Select>
             </FormControl>
           </Grid>
