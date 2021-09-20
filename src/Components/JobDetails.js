@@ -24,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-around",
+    backgroundColor: "rgba(145, 195, 221, .15)",
   },
   iconTextContainer: {
     display: "flex",
