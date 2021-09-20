@@ -12,6 +12,7 @@ import Register from "./Pages/Register";
 import Testing from "./Pages/Testing";
 import JobSearch from "./Pages/JobSearch";
 import JobDetails from "./Components/JobDetails";
+import Dashboard from "./Components/dashboard/Dashboard";
 
 const theme = createTheme({
   palette: {
@@ -75,6 +76,9 @@ function App() {
             </Route>
             <Route path="/jobs/:id">
               <JobDetails />
+            </Route>
+            <Route path="/dashboard">
+              <Dashboard />
             </Route>
             <Route path="/testing">
               <Testing />
