@@ -43,6 +43,7 @@ const useStyles = makeStyles((theme) => ({
   },
   toolbar: {
     paddingRight: 24, // keep right padding when drawer closed
+    marginTop: 5,
   },
   toolbarIcon: {
     display: "flex",
@@ -57,6 +58,7 @@ const useStyles = makeStyles((theme) => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
+    marginTop: "90px",
   },
   appBarShift: {
     marginLeft: drawerWidth,
@@ -65,6 +67,7 @@ const useStyles = makeStyles((theme) => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
     }),
+    marginTop: "90px",
   },
   menuButton: {
     marginRight: 36,
@@ -133,6 +136,7 @@ export default function Dashboard() {
       <AppBar
         position="absolute"
         className={clsx(classes.appBar, open && classes.appBarShift)}
+        elevation={0}
       >
         <Toolbar className={classes.toolbar}>
           <IconButton
@@ -156,11 +160,11 @@ export default function Dashboard() {
           >
             Dashboard
           </Typography>
-          <IconButton color="inherit">
+          {/* <IconButton color="inherit">
             <Badge badgeContent={4} color="secondary">
               <NotificationsIcon />
             </Badge>
-          </IconButton>
+          </IconButton> */}
         </Toolbar>
       </AppBar>
       <Drawer
@@ -177,8 +181,6 @@ export default function Dashboard() {
         </div>
         <Divider />
         <List>{mainListItems}</List>
-        <Divider />
-        <List>{secondaryListItems}</List>
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />

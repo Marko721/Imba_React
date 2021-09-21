@@ -11,7 +11,6 @@ const useStyles = makeStyles((theme) => {
       // backgroundColor: "#030303",
       // width: "80vw",
       // padding: 5,
-      boxSizing: "border-box",
     },
   };
 });
