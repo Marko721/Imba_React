@@ -4,6 +4,7 @@ import Data from "../Components/Data";
 import { makeStyles } from "@material-ui/core/styles";
 import { Container } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
+import { useEffect } from "react";
 
 const useStyles = makeStyles((theme) => ({
   jobDetailsWrapper: {
@@ -46,6 +47,11 @@ const JobDetails = () => {
   //     error,
   //     isPending,
   //   } = useFetch("http://localhost:8000/blogs/" + id);
+
+  // Scroll back to the top of the page when the component load
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div>
