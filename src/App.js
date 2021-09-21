@@ -12,7 +12,9 @@ import Register from "./Pages/Register";
 import Testing from "./Pages/Testing";
 import JobSearch from "./Pages/JobSearch";
 import JobDetails from "./Components/JobDetails";
-import Dashboard from "./Components/dashboard/Dashboard";
+import Dashboard from "./Components/Dashboard/Dashboard";
+import Interests from "./Components/Dashboard/Interests";
+import JobsAll from "./Components/Dashboard/JobsAll";
 
 const theme = createTheme({
   palette: {
@@ -50,6 +52,7 @@ function App() {
       <Router>
         <Layout>
           <Switch>
+            {/* PAGES */}
             <Route exact path="/">
               <Home />
             </Route>
@@ -77,9 +80,16 @@ function App() {
             <Route path="/jobs/:id">
               <JobDetails />
             </Route>
-            <Route path="/dashboard">
-              <Dashboard />
-            </Route>
+
+            {/* DASHBOARD */}
+            <Dashboard>
+              <Route path="/dashboard/">Home</Route>
+              <Route path="/dashboard/all_jobs">
+                <JobsAll />
+              </Route>
+            </Dashboard>
+
+            {/* Test */}
             <Route path="/testing">
               <Testing />
             </Route>
