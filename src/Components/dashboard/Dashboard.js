@@ -9,14 +9,16 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     padding: 10,
     margin: "auto",
-    // height: "90vh",
+    height: "90vh",
   },
   menuContainer: {
     // position: "sticky",
-    // height: "90vh",
+    height: "100%",
     backgroundColor: "rgba(145, 195, 221, .15)",
   },
-  pageContainer: {},
+  pageContainer: {
+    height: "100%",
+  },
 }));
 
 const adminLinks = [];
@@ -33,7 +35,7 @@ const Dashboard = ({ children }) => {
         </Paper>
       </Grid>
 
-      <Grid item xs={12} sm={10} className={classes.pageContainer}>
+      <Grid item xs={12} sm={10}>
         <Paper className={classes.pageContainer}>{children}</Paper>
       </Grid>
     </Grid>
