@@ -14,8 +14,34 @@ const useStyles = makeStyles((theme) => ({
   pageContainer: {},
 }));
 
-const adminLinks = [];
-const userLinks = [];
+const adminLinks = [
+  {
+    text: "Job Applications",
+    path: "/dashboard",
+  },
+  {
+    text: "All Jobs",
+    path: "/dashboard/all_jobs",
+  },
+  {
+    text: "Add Job",
+    path: "/dashboard/add_job",
+  },
+  {
+    text: "Edit Job",
+    path: "/dashboard/edit_job",
+  },
+  {
+    text: "Users",
+    path: "/dashboard/users",
+  },
+];
+const userLinks = [
+  {
+    text: "Applied Jobs",
+    path: "/dashboard/jobs",
+  },
+];
 
 const DashboardNavbar = () => {
   const classes = useStyles();
