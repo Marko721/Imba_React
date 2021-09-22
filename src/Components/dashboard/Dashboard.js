@@ -10,11 +10,12 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     padding: 10,
     margin: "auto",
-    height: "90vh",
+    // height: "90vh",
   },
   menuContainer: {
     // position: "sticky",
     // height: "90vh",
+    backgroundColor: "rgba(145, 195, 221, .15)",
   },
   pageContainer: {},
 }));
@@ -27,12 +28,14 @@ const Dashboard = ({ children }) => {
 
   return (
     <Grid container spacing={2} className={classes.dashboardContainer}>
-      <Grid item xs={12} sm={2} className={classes.menuContainer}>
-        <DashboardNavbar />
+      <Grid item xs={12} sm={2}>
+        <Paper className={classes.menuContainer}>
+          <DashboardNavbar />
+        </Paper>
       </Grid>
 
       <Grid item xs={12} sm={10} className={classes.pageContainer}>
-        <div>{children}</div>
+        <Paper className={classes.pageContainer}>{children}</Paper>
       </Grid>
     </Grid>
   );

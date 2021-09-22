@@ -12,6 +12,9 @@ import { Link } from "react-router-dom";
 import { useHistory, useLocation } from "react-router";
 
 const useStyles = makeStyles((theme) => ({
+  wrapper: {
+    backgroundColor: "rgba(145, 195, 221, .15)",
+  },
   inactive: {
     textDecoration: "none",
     color: "#676767",
@@ -56,27 +59,23 @@ const DashboardNavbar = () => {
   const location = useLocation();
 
   return (
-    <Paper>
-      <List>
-        {adminLinks.map((link) => (
-          <ListItem
-            button
-            key={link.text}
-            onClick={() => history.push(link.path)}
-          >
-            <ListItemText
-              className={
-                location.pathname == link.path
-                  ? classes.active
-                  : classes.inactive
-              }
-              primary={link.text}
-            ></ListItemText>
-            {/* {link.text} */}
-          </ListItem>
-        ))}
-      </List>
-    </Paper>
+    <List>
+      {adminLinks.map((link) => (
+        <ListItem
+          button
+          key={link.text}
+          onClick={() => history.push(link.path)}
+        >
+          <ListItemText
+            className={
+              location.pathname == link.path ? classes.active : classes.inactive
+            }
+            primary={link.text}
+          ></ListItemText>
+          {/* {link.text} */}
+        </ListItem>
+      ))}
+    </List>
   );
 };
 
