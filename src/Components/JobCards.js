@@ -80,7 +80,7 @@ const JobCards = ({ Jobs }) => {
                       </Typography>
 
                       <div className={classes.iconTextContainer}>
-                        <i class="fas fa-user-md"></i>
+                        <i className="fas fa-user-md"></i>
                         <Typography
                           variant="body2"
                           color="textSecondary"
@@ -90,7 +90,7 @@ const JobCards = ({ Jobs }) => {
                         </Typography>
                       </div>
                       <div className={classes.iconTextContainer}>
-                        <i class="fas fa-hourglass-half"></i>
+                        <i className="fas fa-hourglass-half"></i>
                         <Typography
                           variant="body2"
                           color="textSecondary"
@@ -100,7 +100,7 @@ const JobCards = ({ Jobs }) => {
                         </Typography>
                       </div>
                       <div className={classes.iconTextContainer}>
-                        <i class="far fa-calendar"></i>
+                        <i className="far fa-calendar"></i>
                         <Typography
                           variant="body2"
                           color="textSecondary"
@@ -110,7 +110,7 @@ const JobCards = ({ Jobs }) => {
                         </Typography>
                       </div>
                       <div className={classes.iconTextContainer}>
-                        <i class="far fa-calendar-alt"></i>
+                        <i className="far fa-calendar-alt"></i>
                         <Typography
                           variant="body2"
                           color="textSecondary"
