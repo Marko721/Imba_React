@@ -22,10 +22,10 @@ const DashboardNavbar = () => {
   return (
     <Paper>
       <ListItem>
-        <Link to="/dashboard/job_applications">Job Applications</Link>
+        <Link to="/dashboard/">Job Applications</Link>
       </ListItem>
       <ListItem>
-        <Link to="/dashboard/">All Jobs</Link>
+        <Link to="/dashboard/all_jobs">All Jobs</Link>
       </ListItem>
 
       <ListItem>
