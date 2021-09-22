@@ -13,8 +13,11 @@ import Testing from "./Pages/Testing";
 import JobSearch from "./Pages/JobSearch";
 import JobDetails from "./Components/JobDetails";
 import Dashboard from "./Components/Dashboard/Dashboard";
-import Interests from "./Components/Dashboard/Interests";
-import JobsAll from "./Components/Dashboard/JobsAll";
+import JobsActive from "./Components/Dashboard/JobsActive";
+import JobAdd from "./Components/Dashboard/JobAdd";
+import JobApplications from "./Components/Dashboard/JobApplications";
+import JobEdit from "./Components/Dashboard/JobEdit";
+import Users from "./Components/Dashboard/Users";
 
 const theme = createTheme({
   palette: {
@@ -56,25 +59,25 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
-            <Route path="/nurses">
+            <Route exact path="/nurses">
               <Nurses />
             </Route>
-            <Route path="/facilities">
+            <Route exact path="/facilities">
               <Facilities />
             </Route>
-            <Route path="/about">
+            <Route exact path="/about">
               <About />
             </Route>
-            <Route path="/contact">
+            <Route exact path="/contact">
               <Contact />
             </Route>
-            <Route path="/login">
+            <Route exact path="/login">
               <Login />
             </Route>
-            <Route path="/register">
+            <Route exact path="/register">
               <Register />
             </Route>
-            <Route path="/job_search">
+            <Route exact path="/job_search">
               <JobSearch />
             </Route>
             <Route path="/jobs/:id">
@@ -83,9 +86,20 @@ function App() {
 
             {/* DASHBOARD */}
             <Dashboard>
-              <Route path="/dashboard/">Home</Route>
-              <Route path="/dashboard/all_jobs">
-                <JobsAll />
+              <Route exact path="/dashboard/job_applications">
+                <JobApplications />
+              </Route>
+              <Route exact path="/dashboard/">
+                <JobsActive />
+              </Route>
+              <Route exact path="/dashboard/add_job">
+                <JobAdd />
+              </Route>
+              <Route exact path="/dashboard/edit_job">
+                <JobEdit />
+              </Route>
+              <Route exact path="/dashboard/users">
+                <Users />
               </Route>
             </Dashboard>
 

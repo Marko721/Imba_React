@@ -112,18 +112,18 @@ const JobSearch = () => {
           {/* SPECIALTY */}
           <Grid item xs={12} sm={6} md={2}>
             <FormControl variant="outlined" className={classes.formControl}>
-              <InputLabel htmlFor="specialties" color="secondary">
-                Specialties
+              <InputLabel htmlFor="specialty" color="secondary">
+                Specialty
               </InputLabel>
               <Select
                 native
                 color="secondary"
                 value={state.specialty}
                 onChange={handleChange}
-                label="Specialties"
+                label="Specialty"
                 inputProps={{
                   name: "specialty",
-                  id: "specialties",
+                  id: "specialty",
                 }}
               >
                 <option aria-label="None" value="" />

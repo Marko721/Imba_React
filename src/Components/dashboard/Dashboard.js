@@ -9,7 +9,8 @@ const useStyles = makeStyles((theme) => ({
   dashboardContainer: {
     width: "100%",
     padding: 10,
-    height: 800,
+    margin: "auto",
+    // height: 800,
   },
   menuContainer: {},
   pageContainer: {},
@@ -23,9 +24,13 @@ const Dashboard = ({ children }) => {
 
   return (
     <Grid container spacing={2} className={classes.dashboardContainer}>
-      <DashboardNavbar />
+      <Grid item xs={12} sm={2} className={classes.menuContainer}>
+        <DashboardNavbar />
+      </Grid>
 
-      <div>{children}</div>
+      <Grid item xs={12} sm={10} className={classes.pageContainer}>
+        <div>{children}</div>
+      </Grid>
     </Grid>
   );
 };

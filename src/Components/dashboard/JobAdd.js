@@ -8,14 +8,14 @@ const useStyles = makeStyles((theme) => ({
   pageContainer: {},
 }));
 
-const Interests = () => {
+const JobsActive = () => {
   const classes = useStyles();
 
   return (
-    <Grid item xs={12} sm={10} className={classes.pageContainer}>
-      <Paper>asd</Paper>
-    </Grid>
+    <div>
+      <Paper>Add Job</Paper>
+    </div>
   );
 };
 
-export default Interests;
+export default JobsActive;

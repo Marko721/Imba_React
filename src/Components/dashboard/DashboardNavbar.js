@@ -20,25 +20,24 @@ const userLinks = [];
 const DashboardNavbar = () => {
   const classes = useStyles();
   return (
-    <Grid item xs={12} sm={2} className={classes.menuContainer}>
-      <Paper>
-        <ListItem>
-          <Link to="/dashboard/">Interests</Link>
-        </ListItem>
-        <ListItem>
-          <Link to="/dashboard/all_jobs">View Jobs</Link>
-        </ListItem>
-        <ListItem>
-          <Link>Add Job</Link>
-        </ListItem>
-        <ListItem>
-          <Link>Edit Job</Link>
-        </ListItem>
-        <ListItem>
-          <Link>Users</Link>
-        </ListItem>
-      </Paper>
-    </Grid>
+    <Paper>
+      <ListItem>
+        <Link to="/dashboard/job_applications">Job Applications</Link>
+      </ListItem>
+      <ListItem>
+        <Link to="/dashboard/">All Jobs</Link>
+      </ListItem>
+
+      <ListItem>
+        <Link to="/dashboard/add_job">Add Job</Link>
+      </ListItem>
+      <ListItem>
+        <Link to="/dashboard/edit_job">Edit Job</Link>
+      </ListItem>
+      <ListItem>
+        <Link to="/dashboard/users">Users</Link>
+      </ListItem>
+    </Paper>
   );
 };
 
