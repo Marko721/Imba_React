@@ -1,10 +1,4 @@
-import {
-  makeStyles,
-  Paper,
-  Typography,
-  Grid,
-  Container,
-} from "@material-ui/core";
+import { makeStyles } from "@material-ui/core";
 import { useState, useEffect } from "react";
 import React from "react";
 import AppBar from "@material-ui/core/AppBar";
@@ -141,7 +135,7 @@ const Navbar = () => {
             >
               <ListItemText
                 className={
-                  location.pathname == item.path ? classes.active : null
+                  location.pathname === item.path ? classes.active : null
                 }
                 primary={item.text}
               ></ListItemText>
@@ -155,9 +149,11 @@ const Navbar = () => {
               key={item.text}
               button
               onClick={() => history.push(item.path)}
-              className={location.pathname == item.path ? classes.active : null}
+              className={
+                location.pathname === item.path ? classes.active : null
+              }
             >
-              {/* {item.path == "/login" ? <HomeIcon color="secondary" /> : null} */}
+              {/* {item.path === "/login" ? <HomeIcon color="secondary" /> : null} */}
 
               <ListItemText primary={item.text}></ListItemText>
             </ListItem>
@@ -230,7 +226,7 @@ const Navbar = () => {
               >
                 <ListItemText
                   className={
-                    location.pathname == item.path ? classes.active : null
+                    location.pathname === item.path ? classes.active : null
                   }
                   primary={item.text}
                 ></ListItemText>
@@ -246,11 +242,11 @@ const Navbar = () => {
                 button
                 onClick={() => pathAndClose(item.path)}
               >
-                {/* {item.path == "/login" ? <HomeIcon color="secondary" /> : null} */}
+                {/* {item.path === "/login" ? <HomeIcon color="secondary" /> : null} */}
 
                 <ListItemText
                   className={
-                    location.pathname == item.path ? classes.active : null
+                    location.pathname === item.path ? classes.active : null
                   }
                   primary={item.text}
                 ></ListItemText>

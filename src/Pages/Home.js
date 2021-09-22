@@ -151,14 +151,18 @@ const Home = () => {
     <div>
       {/* #################################### Main Banner ######################################################################## */}
       <Paper className={classes.bannerContainer} elevation={0}>
-        <img src={bannerImg} className={classes.banner} />
+        <img
+          src={bannerImg}
+          className={classes.banner}
+          alt="Created by Nurses for Nurses"
+        />
         <div className={classes.overlay} />
         <Container>
           <Grid
             container
             className={classes.bannerTextContainer}
             style={
-              bannerImg == BannerImagePc
+              bannerImg === BannerImagePc
                 ? { top: "17%", left: "7%" }
                 : { top: "5%", left: "7%" }
             }
@@ -210,7 +214,11 @@ const Home = () => {
           style={{ marginTop: "50px" }}
         >
           <Grid item xs={12}>
-            <img src={LogoDivider} className={classes.logoDivider} />
+            <img
+              src={LogoDivider}
+              className={classes.logoDivider}
+              alt="imba symbol logo"
+            />
             <Typography variant="h4" color="secondary" align="center">
               Available jobs
             </Typography>
@@ -284,7 +292,11 @@ const Home = () => {
               </Typography>
             </Grid>
             <Grid item xs={12} sm={12} md={6}>
-              <img src={BenefitsImage} className={classes.benefitsImage} />
+              <img
+                src={BenefitsImage}
+                className={classes.benefitsImage}
+                alt="imba health benefits"
+              />
             </Grid>
           </Grid>
         </Container>
@@ -314,7 +326,11 @@ const Home = () => {
           </Grid>
 
           <Grid item xs={12} sm={12} md={6}>
-            <img src={aboutImage} className={classes.benefitsImage} />
+            <img
+              src={aboutImage}
+              className={classes.benefitsImage}
+              alt="imba health about us"
+            />
           </Grid>
         </Grid>
       </Container>

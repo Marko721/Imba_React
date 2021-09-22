@@ -1,15 +1,8 @@
-import React from "react";
-import Grid from "@material-ui/core/Grid";
-import {
-  List,
-  ListItem,
-  ListItemText,
-  Paper,
-  Toolbar,
-} from "@material-ui/core";
+import React, { useEffect, useState } from "react";
+import { List, ListItem, ListItemText } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core";
-import { Link } from "react-router-dom";
 import { useHistory, useLocation } from "react-router";
+// import Data from "..//Data";
 
 const useStyles = makeStyles((theme) => ({
   wrapper: {
@@ -25,6 +18,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const adminLinks = [
+  {
+    text: "Account info",
+    path: "/dashboard/account_info",
+  },
   {
     text: "Job Applications",
     path: "/dashboard",
@@ -48,6 +45,10 @@ const adminLinks = [
 ];
 const userLinks = [
   {
+    text: "Account info",
+    path: "/dashboard/account_info",
+  },
+  {
     text: "Applied Jobs",
     path: "/dashboard/jobs",
   },
@@ -57,6 +58,18 @@ const DashboardNavbar = () => {
   const classes = useStyles();
   const history = useHistory();
   const location = useLocation();
+
+  // const user = Data.users;
+
+  // const [userAdmin, setUserAdmin] = useState("");
+
+  // useEffect(() => {
+  //   if (user.Role === "admin") {
+  //     setUserAdmin("admin");
+  //   } else {
+  //     setUserAdmin("user");
+  //   }
+  // });
 
   return (
     <List>
