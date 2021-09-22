@@ -1,17 +1,24 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
-import { ListItem, Paper } from "@material-ui/core";
+import {
+  List,
+  ListItem,
+  ListItemText,
+  Paper,
+  Toolbar,
+} from "@material-ui/core";
 import { makeStyles } from "@material-ui/core";
 import { Link } from "react-router-dom";
+import { useHistory, useLocation } from "react-router";
 
 const useStyles = makeStyles((theme) => ({
-  dashboardContainer: {
-    width: "100%",
-    padding: 10,
-    height: 800,
+  inactive: {
+    textDecoration: "none",
+    color: "#676767",
   },
-  menuContainer: {},
-  pageContainer: {},
+  active: {
+    color: "#6ca6c5",
+  },
 }));
 
 const adminLinks = [
@@ -45,24 +52,30 @@ const userLinks = [
 
 const DashboardNavbar = () => {
   const classes = useStyles();
+  const history = useHistory();
+  const location = useLocation();
+
   return (
     <Paper>
-      <ListItem>
-        <Link to="/dashboard/">Job Applications</Link>
-      </ListItem>
-      <ListItem>
-        <Link to="/dashboard/all_jobs">All Jobs</Link>
-      </ListItem>
-
-      <ListItem>
-        <Link to="/dashboard/add_job">Add Job</Link>
-      </ListItem>
-      <ListItem>
-        <Link to="/dashboard/edit_job">Edit Job</Link>
-      </ListItem>
-      <ListItem>
-        <Link to="/dashboard/users">Users</Link>
-      </ListItem>
+      <List>
+        {adminLinks.map((link) => (
+          <ListItem
+            button
+            key={link.text}
+            onClick={() => history.push(link.path)}
+          >
+            <ListItemText
+              className={
+                location.pathname == link.path
+                  ? classes.active
+                  : classes.inactive
+              }
+              primary={link.text}
+            ></ListItemText>
+            {/* {link.text} */}
+          </ListItem>
+        ))}
+      </List>
     </Paper>
   );
 };

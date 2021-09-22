@@ -10,9 +10,12 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     padding: 10,
     margin: "auto",
-    // height: 800,
+    height: "90vh",
   },
-  menuContainer: {},
+  menuContainer: {
+    // position: "sticky",
+    // height: "90vh",
+  },
   pageContainer: {},
 }));
 
