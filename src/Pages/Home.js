@@ -188,7 +188,7 @@ const Home = () => {
                   size="large"
                   variant="contained"
                   color="secondary"
-                  href="#"
+                  href="/job_search"
                 >
                   Get Started
                   <Icon
