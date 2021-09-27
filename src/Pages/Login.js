@@ -111,6 +111,7 @@ export default function Login() {
           <FormControlLabel
             control={<Checkbox value="remember" color="secondary" />}
             label="Remember me"
+            style={{ color: "#676767" }}
           />
           <Button
             type="submit"
