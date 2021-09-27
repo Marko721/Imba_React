@@ -57,7 +57,7 @@ export default function Register() {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Sign up
+          Register
         </Typography>
         <form className={classes.form} noValidate>
           <Grid container spacing={2}>
@@ -119,7 +119,7 @@ export default function Register() {
             color="secondary"
             className={classes.submit}
           >
-            Sign Up
+            Register
           </Button>
           <Grid container justifyContent="flex-end">
             <Grid item>
