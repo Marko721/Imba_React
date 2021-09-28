@@ -1,26 +1,3 @@
-// import React from "react";
-// import { makeStyles } from "@material-ui/core";
-// import Grid from "@material-ui/core/Grid";
-// import { useState } from "react";
-
-// const useStyles = makeStyles((theme) => ({}));
-
-// const Login = () => {
-//   const classes = useStyles();
-//   const [username, setUsername] = useState("");
-//   const [password, setPassword] = useState("");
-
-//   return (
-//     <div>
-//       <Grid container>
-//         <Grid item xs={12} sm={6}></Grid>
-//       </Grid>
-//     </div>
-//   );
-// };
-
-// export default Login;
-
 import React from "react";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
