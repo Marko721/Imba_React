@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     padding: 10,
     margin: "auto",
-    height: "90vh",
+    height: "100%",
   },
   menuContainer: {
     // position: "sticky",
@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "rgba(145, 195, 221, .15)",
   },
   pageContainer: {
-    height: "100%",
+    height: "85vh",
   },
 }));
 
@@ -29,13 +29,13 @@ const Dashboard = ({ children }) => {
 
   return (
     <Grid container spacing={2} className={classes.dashboardContainer}>
-      <Grid item xs={12} sm={2}>
+      <Grid item xs={12} sm={4} md={2}>
         <Paper className={classes.menuContainer}>
           <DashboardNavbar />
         </Paper>
       </Grid>
 
-      <Grid item xs={12} sm={10}>
+      <Grid item xs={12} sm={8} md={10}>
         <Paper className={classes.pageContainer}>{children}</Paper>
       </Grid>
     </Grid>

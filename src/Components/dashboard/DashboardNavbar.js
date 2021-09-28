@@ -6,7 +6,10 @@ import { useHistory, useLocation } from "react-router";
 
 const useStyles = makeStyles((theme) => ({
   wrapper: {
-    backgroundColor: "rgba(145, 195, 221, .15)",
+    // backgroundColor: "rgba(145, 195, 221, .15)",
+  },
+  menuLinks: {
+    textAlign: "center",
   },
   inactive: {
     textDecoration: "none",
@@ -75,6 +78,7 @@ const DashboardNavbar = () => {
     <List>
       {adminLinks.map((link) => (
         <ListItem
+          className={classes.menuLinks}
           button
           key={link.text}
           onClick={() => history.push(link.path)}
