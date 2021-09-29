@@ -47,8 +47,8 @@ function Copyright() {
     <Typography variant="body2" color="primary" align="center">
       {"Copyright © "}
       <Link color="inherit" href="https://www.arwenet.com">
-        Imba Health doo | All Rights Reserved | Privacy Policy | Terms and
-        Conditions
+        Imba Health Solutions LLC | All Rights Reserved | Privacy Policy | Terms
+        and Conditions
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
@@ -102,12 +102,12 @@ const Footer = ({ mobileView }) => {
       path: "/faq",
     },
     {
-      text: "Twitter",
+      text: "Instagram",
       path: "/support",
     },
     {
-      text: "Email",
-      path: "/contact",
+      text: "LinkedIn",
+      path: "/linkedIn",
     },
   ];
 
@@ -172,6 +172,10 @@ const Footer = ({ mobileView }) => {
                 </ListItem>
               ))}
             </List>
+            <Typography className={classes.title}>office@imba.com</Typography>
+            <Typography className={classes.title}>
+              +1 123 533 212 5324
+            </Typography>
           </Grid>
 
           {/* LOGO Info */}
