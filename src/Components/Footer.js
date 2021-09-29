@@ -6,6 +6,8 @@ import {
   Grid,
   Container,
   Divider,
+  Link,
+  Box,
 } from "@material-ui/core";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
@@ -18,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   // FOOTER
   footer: {
     paddingTop: 70,
-    paddingBottom: 70,
+    paddingBottom: 20,
     backgroundColor: "#3F86AB",
   },
   title: {
@@ -33,7 +35,24 @@ const useStyles = makeStyles((theme) => ({
       // color: "#676767",
     },
   },
+  logo: {
+    maxWidth: 200,
+    cursor: "pointer",
+  },
 }));
+
+function Copyright() {
+  return (
+    <Typography variant="body2" color="primary" align="center">
+      {"Copyright © "}
+      <Link color="inherit" href="https://www.arwenet.com">
+        Imba Health doo
+      </Link>{" "}
+      {new Date().getFullYear()}
+      {"."}
+    </Typography>
+  );
+}
 
 const Footer = ({ mobileView }) => {
   const classes = useStyles();
@@ -152,7 +171,17 @@ const Footer = ({ mobileView }) => {
               ))}
             </List>
           </Grid>
+
+          {/* LOGO Info */}
+          <Grid item xs={12} sm={6} md={3}>
+            <img src={Logo} className={classes.logo} />
+          </Grid>
         </Grid>
+
+        {/* COPYRIGHT */}
+        <Box mt={8}>
+          <Copyright />
+        </Box>
       </Container>
     </div>
   );
