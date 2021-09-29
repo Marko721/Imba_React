@@ -36,7 +36,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   logo: {
-    maxWidth: 200,
+    // padding: 50,
+    maxWidth: 250,
     cursor: "pointer",
   },
 }));
@@ -46,7 +47,8 @@ function Copyright() {
     <Typography variant="body2" color="primary" align="center">
       {"Copyright © "}
       <Link color="inherit" href="https://www.arwenet.com">
-        Imba Health doo
+        Imba Health doo | All Rights Reserved | Privacy Policy | Terms and
+        Conditions
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
@@ -155,7 +157,7 @@ const Footer = ({ mobileView }) => {
           {/* SOCIAL LINKS */}
           <Grid item xs={12} sm={6} md={3}>
             <List>
-              <Typography className={classes.title}>Resources</Typography>
+              <Typography className={classes.title}>Social</Typography>
               <Divider />
               {socialLinks.map((item) => (
                 <ListItem
