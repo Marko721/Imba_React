@@ -17,8 +17,8 @@ import Logo from "./Images/logo.png";
 const useStyles = makeStyles((theme) => ({
   // FOOTER
   footer: {
-    paddingTop: 30,
-    paddingBottom: 30,
+    paddingTop: 70,
+    paddingBottom: 70,
     backgroundColor: "#3F86AB",
   },
   title: {
@@ -60,7 +60,7 @@ const Footer = ({ mobileView }) => {
     },
   ];
 
-  const resources = [
+  const resourcesLinks = [
     {
       text: "FAQ",
       path: "/faq",
@@ -71,6 +71,21 @@ const Footer = ({ mobileView }) => {
     },
     {
       text: "Contact",
+      path: "/contact",
+    },
+  ];
+
+  const socialLinks = [
+    {
+      text: "Facebook",
+      path: "/faq",
+    },
+    {
+      text: "Twitter",
+      path: "/support",
+    },
+    {
+      text: "Email",
       path: "/contact",
     },
   ];
@@ -97,11 +112,33 @@ const Footer = ({ mobileView }) => {
               ))}
             </List>
           </Grid>
+
+          {/* RESOURCES LINKS */}
           <Grid item xs={12} sm={6} md={3}>
             <List>
               <Typography className={classes.title}>Resources</Typography>
               <Divider />
-              {resources.map((item) => (
+              {resourcesLinks.map((item) => (
+                <ListItem
+                  key={item.text}
+                  button
+                  onClick={() => history.push(item.path)}
+                >
+                  <ListItemText
+                    className={classes.listItem}
+                    primary={item.text}
+                  ></ListItemText>
+                </ListItem>
+              ))}
+            </List>
+          </Grid>
+
+          {/* SOCIAL LINKS */}
+          <Grid item xs={12} sm={6} md={3}>
+            <List>
+              <Typography className={classes.title}>Resources</Typography>
+              <Divider />
+              {socialLinks.map((item) => (
                 <ListItem
                   key={item.text}
                   button
