@@ -102,7 +102,7 @@ const Footer = ({ mobileView }) => {
   return (
     <div className={classes.footer}>
       <Container>
-        <Grid container spacing={5}>
+        <Grid container spacing={4}>
           <Grid item xs={12} sm={6} md={3}>
             <List>
               <Typography className={classes.title}>Links</Typography>
