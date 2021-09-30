@@ -14,7 +14,10 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import { useHistory, useLocation } from "react-router";
-import Logo from "./Images/logo.png";
+import LogoWhite from "./Images/logo_white.png";
+import FacebookIcon from "@material-ui/icons/Facebook";
+import InstagramIcon from "@material-ui/icons/Instagram";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
 
 const useStyles = makeStyles((theme) => ({
   // FOOTER
@@ -34,6 +37,9 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       // color: "#676767",
     },
+  },
+  iconsList: {
+    display: "flex",
   },
   logo: {
     // padding: 50,
@@ -96,21 +102,6 @@ const Footer = ({ mobileView }) => {
     },
   ];
 
-  const socialLinks = [
-    {
-      text: "Facebook",
-      path: "/faq",
-    },
-    {
-      text: "Instagram",
-      path: "/support",
-    },
-    {
-      text: "LinkedIn",
-      path: "/linkedIn",
-    },
-  ];
-
   return (
     <div className={classes.footer}>
       <Container>
@@ -157,30 +148,33 @@ const Footer = ({ mobileView }) => {
           {/* SOCIAL LINKS */}
           <Grid item xs={12} sm={6} md={3}>
             <List>
-              <Typography className={classes.title}>Social</Typography>
+              <Typography className={classes.title}>Contact</Typography>
               <Divider />
-              {socialLinks.map((item) => (
-                <ListItem
-                  key={item.text}
-                  button
-                  onClick={() => history.push(item.path)}
-                >
-                  <ListItemText
-                    className={classes.listItem}
-                    primary={item.text}
-                  ></ListItemText>
+
+              <Typography className={classes.title} style={{ marginTop: 8 }}>
+                office@imba.com
+              </Typography>
+              <Typography className={classes.title}>
+                +1 123 533 212 5324
+              </Typography>
+              <div className={classes.iconsList}>
+                <ListItem key="facebook" button>
+                  <FacebookIcon color="primary" fontSize="large" />
                 </ListItem>
-              ))}
+                <ListItem key="instagram" button>
+                  <InstagramIcon color="primary" fontSize="large" />
+                </ListItem>
+                <ListItem key="linkedIn" button>
+                  <LinkedInIcon color="primary" fontSize="large" />
+                </ListItem>
+                <ListItem></ListItem>
+              </div>
             </List>
-            <Typography className={classes.title}>office@imba.com</Typography>
-            <Typography className={classes.title}>
-              +1 123 533 212 5324
-            </Typography>
           </Grid>
 
           {/* LOGO Info */}
           <Grid item xs={12} sm={6} md={3}>
-            <img src={Logo} className={classes.logo} />
+            <img src={LogoWhite} className={classes.logo} />
           </Grid>
         </Grid>
 
