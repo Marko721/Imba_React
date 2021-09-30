@@ -40,6 +40,7 @@ const useStyles = makeStyles((theme) => ({
   },
   iconsList: {
     display: "flex",
+    marginTop: 33,
   },
   logo: {
     // padding: 50,
@@ -151,7 +152,7 @@ const Footer = ({ mobileView }) => {
               <Typography className={classes.title}>Contact</Typography>
               <Divider />
 
-              <Typography className={classes.title} style={{ marginTop: 8 }}>
+              <Typography className={classes.title} style={{ marginTop: 10 }}>
                 office@imba.com
               </Typography>
               <Typography className={classes.title}>
