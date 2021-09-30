@@ -46,22 +46,10 @@ const useStyles = makeStyles((theme) => ({
     // padding: 50,
     maxWidth: 250,
     cursor: "pointer",
+    margin: 0,
+    padding: 0,
   },
 }));
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="primary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="https://www.arwenet.com">
-        Imba Health Solutions LLC | All Rights Reserved | Privacy Policy | Terms
-        and Conditions
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
 
 const Footer = ({ mobileView }) => {
   const classes = useStyles();
@@ -100,6 +88,14 @@ const Footer = ({ mobileView }) => {
     {
       text: "Contact",
       path: "/contact",
+    },
+    {
+      text: "Privacy Policy",
+      path: "#",
+    },
+    {
+      text: "Terms and Conditions",
+      path: "#",
     },
   ];
 
@@ -180,9 +176,19 @@ const Footer = ({ mobileView }) => {
         </Grid>
 
         {/* COPYRIGHT */}
-        <Box mt={8}>
-          <Copyright />
-        </Box>
+        <Typography
+          variant="body2"
+          color="primary"
+          align="center"
+          style={{ marginTop: 30 }}
+        >
+          {"Copyright © "}
+          <Link color="inherit" href="#">
+            Imba Health Solutions LLC | All Rights Reserved
+          </Link>{" "}
+          {new Date().getFullYear()}
+          {"."}
+        </Typography>
       </Container>
     </div>
   );
