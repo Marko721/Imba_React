@@ -78,8 +78,8 @@ const Footer = ({ mobileView }) => {
 
   const resourcesLinks = [
     {
-      text: "FAQ",
-      path: "/faq",
+      text: "FAQs",
+      path: "/faqs",
     },
     {
       text: "Support",
