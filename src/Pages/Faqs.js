@@ -80,6 +80,9 @@ const Faqs = () => {
   return (
     <div className={classes.root}>
       <Container>
+        <Typography variant="h4" color="secondary" gutterBottom>
+          FAQs for nurses
+        </Typography>
         {questions.map((question) => (
           <Accordion key={question.q}>
             <AccordionSummary
