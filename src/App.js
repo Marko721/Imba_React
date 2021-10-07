@@ -11,6 +11,7 @@ import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import Testing from "./Pages/Testing";
 import JobSearch from "./Pages/JobSearch";
+import Faqs from "./Pages/Faqs";
 import JobDetails from "./Components/JobDetails";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import JobsActive from "./Components/Dashboard/JobsActive";
@@ -79,6 +80,9 @@ function App() {
             </Route>
             <Route exact path="/job_search">
               <JobSearch />
+            </Route>
+            <Route exact path="/faqs">
+              <Faqs />
             </Route>
             <Route path="/jobs/:id">
               <JobDetails />
