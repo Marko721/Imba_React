@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Accordion from "@material-ui/core/Accordion";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
@@ -76,6 +77,10 @@ const questions = [
 
 const Faqs = () => {
   const classes = useStyles();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className={classes.root}>
