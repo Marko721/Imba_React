@@ -14,11 +14,7 @@ import JobSearch from "./Pages/JobSearch";
 import Faqs from "./Pages/Faqs";
 import JobDetails from "./Components/JobDetails";
 import Dashboard from "./Components/Dashboard/Dashboard";
-import JobsActive from "./Components/Dashboard/JobsActive";
-import JobAdd from "./Components/Dashboard/JobAdd";
-import JobApplications from "./Components/Dashboard/JobApplications";
-import JobEdit from "./Components/Dashboard/JobEdit";
-import Users from "./Components/Dashboard/Users";
+import { NotFound } from "http-errors";
 
 const theme = createTheme({
   palette: {
@@ -96,6 +92,11 @@ function App() {
             {/* Test */}
             <Route path="/testing">
               <Testing />
+            </Route>
+
+            {/* NOT FOUND */}
+            <Route path="*">
+              <NotFound />
             </Route>
           </Switch>
         </Layout>
