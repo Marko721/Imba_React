@@ -19,6 +19,7 @@ import JobAdd from "./Components/Dashboard/JobAdd";
 import JobApplications from "./Components/Dashboard/JobApplications";
 import JobEdit from "./Components/Dashboard/JobEdit";
 import Users from "./Components/Dashboard/Users";
+import NotFound from "./Pages/NotFound";
 
 const theme = createTheme({
   palette: {
@@ -108,8 +109,12 @@ function App() {
             </Dashboard>
 
             {/* Test */}
-            <Route path="/testing">
+            <Route exact path="/testing">
               <Testing />
+            </Route>
+
+            <Route path="*">
+              <NotFound />
             </Route>
           </Switch>
         </Layout>
