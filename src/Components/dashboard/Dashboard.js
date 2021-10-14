@@ -1,8 +1,14 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
-import { Paper } from "@material-ui/core";
+import { Paper, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core";
 import DashboardNavbar from "./DashboardNavbar";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import JobsActive from "./JobsActive";
+import JobAdd from "./JobAdd";
+import JobApplications from "./JobApplications";
+import JobEdit from "./JobEdit";
+import Users from "./Users";
 
 const useStyles = makeStyles((theme) => ({
   dashboardContainer: {
@@ -36,7 +42,28 @@ const Dashboard = ({ children }) => {
       </Grid>
 
       <Grid item xs={12} sm={8} md={10}>
-        <Paper className={classes.pageContainer}>{children}</Paper>
+        <Paper className={classes.pageContainer}>
+          <Router>
+            <Switch>
+              {/* PAGES */}
+              <Route exact path="/dashboard">
+                <JobApplications />
+              </Route>
+              <Route exact path="/dashboard/all_jobs">
+                <JobsActive />
+              </Route>
+              <Route exact path="/dashboard/add_job">
+                <JobAdd />
+              </Route>
+              <Route exact path="/dashboard/edit_job">
+                <JobEdit />
+              </Route>
+              <Route exact path="/dashboard/users">
+                <Users />
+              </Route>
+            </Switch>
+          </Router>
+        </Paper>
       </Grid>
     </Grid>
   );

@@ -89,23 +89,9 @@ function App() {
             </Route>
 
             {/* DASHBOARD */}
-            <Dashboard>
-              <Route exact path="/dashboard/">
-                <JobApplications />
-              </Route>
-              <Route exact path="/dashboard/all_jobs">
-                <JobsActive />
-              </Route>
-              <Route exact path="/dashboard/add_job">
-                <JobAdd />
-              </Route>
-              <Route exact path="/dashboard/edit_job">
-                <JobEdit />
-              </Route>
-              <Route exact path="/dashboard/users">
-                <Users />
-              </Route>
-            </Dashboard>
+            <Route exact path="/dashboard/">
+              <Dashboard />
+            </Route>
 
             {/* Test */}
             <Route path="/testing">
