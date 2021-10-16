@@ -20,6 +20,7 @@ import JobApplications from "./Components/Dashboard/JobApplications";
 import JobEdit from "./Components/Dashboard/JobEdit";
 import Users from "./Components/Dashboard/Users";
 import NotFound from "./Pages/NotFound";
+import AccountInfo from "./Components/Dashboard/AccountInfo";
 
 const theme = createTheme({
   palette: {
@@ -90,23 +91,37 @@ function App() {
             </Route>
 
             {/* DASHBOARD */}
-            <Dashboard>
-              <Route exact path="/dashboard/">
+
+            <Route exact path="/dashboard/">
+              <Dashboard>
                 <JobApplications />
-              </Route>
-              <Route exact path="/dashboard/all_jobs">
+              </Dashboard>
+            </Route>
+            <Route exact path="/dashboard/all_jobs">
+              <Dashboard>
                 <JobsActive />
-              </Route>
-              <Route exact path="/dashboard/add_job">
+              </Dashboard>
+            </Route>
+            <Route exact path="/dashboard/add_job">
+              <Dashboard>
                 <JobAdd />
-              </Route>
-              <Route exact path="/dashboard/edit_job">
+              </Dashboard>
+            </Route>
+            <Route exact path="/dashboard/edit_job">
+              <Dashboard>
                 <JobEdit />
-              </Route>
-              <Route exact path="/dashboard/users">
+              </Dashboard>
+            </Route>
+            <Route exact path="/dashboard/users">
+              <Dashboard>
                 <Users />
-              </Route>
-            </Dashboard>
+              </Dashboard>
+            </Route>
+            <Route exact path="/dashboard/account_info">
+              <Dashboard>
+                <AccountInfo />
+              </Dashboard>
+            </Route>
 
             {/* Test */}
             <Route exact path="/testing">

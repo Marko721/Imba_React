@@ -22,10 +22,6 @@ const useStyles = makeStyles((theme) => ({
 
 const adminLinks = [
   {
-    text: "Account info",
-    path: "/dashboard/account_info",
-  },
-  {
     text: "Job Applications",
     path: "/dashboard",
   },
@@ -44,6 +40,10 @@ const adminLinks = [
   {
     text: "Users",
     path: "/dashboard/users",
+  },
+  {
+    text: "Account info",
+    path: "/dashboard/account_info",
   },
 ];
 const userLinks = [
