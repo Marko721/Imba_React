@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
@@ -8,6 +8,7 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -32,6 +33,28 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Register() {
   const classes = useStyles();
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [phone, setPhone] = useState("");
+  const [error, setError] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError(false);
+    try {
+      const res = await axios.post("/auth/register", {
+        firstName,
+        lastName,
+        email,
+        password,
+      });
+      res.data && window.location.replace("/login");
+    } catch (err) {
+      setError(true);
+    }
+  };
 
   return (
     <Container component="main" maxWidth="xs">
@@ -43,6 +66,13 @@ export default function Register() {
         <Typography component="h1" variant="h5">
           Register
         </Typography>
+
+        {error && (
+          <Typography>
+            <span style={{ color: "coral" }}>Something went wrong!</span>
+          </Typography>
+        )}
+
         <form className={classes.form} noValidate>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
@@ -56,6 +86,7 @@ export default function Register() {
                 id="firstName"
                 label="First Name"
                 autoFocus
+                onChange={(e) => setFirstName(e.target.value)}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -68,6 +99,7 @@ export default function Register() {
                 label="Last Name"
                 name="lastName"
                 autoComplete="lname"
+                onChange={(e) => setLastName(e.target.value)}
               />
             </Grid>
             <Grid item xs={12}>
@@ -80,6 +112,7 @@ export default function Register() {
                 label="Email Address"
                 name="email"
                 autoComplete="email"
+                onChange={(e) => setEmail(e.target.value)}
               />
             </Grid>
             <Grid item xs={12}>
@@ -93,6 +126,7 @@ export default function Register() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                onChange={(e) => setPassword(e.target.value)}
               />
             </Grid>
           </Grid>
@@ -102,6 +136,7 @@ export default function Register() {
             variant="contained"
             color="secondary"
             className={classes.submit}
+            onClick={(e) => handleSubmit(e)}
           >
             Register
           </Button>
