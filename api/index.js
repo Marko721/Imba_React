@@ -4,7 +4,7 @@ const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const authRoute = require("./routes/auth");
 const userRoute = require("./routes/users");
-const postRoute = require("./routes/posts");
+const jobRoute = require("./routes/jobs");
 const multer = require("multer");
 
 dotenv.config();
@@ -31,7 +31,7 @@ app.post("/api/upload", upload.single("file"), (req, res) => {
 
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
-app.use("/api/posts", postRoute);
+app.use("/api/posts", jobRoute);
 
 app.listen("3000", () => {
   console.log("Backend is running");
