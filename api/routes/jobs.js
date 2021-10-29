@@ -1,92 +1,90 @@
 const router = require("express").Router();
 const User = require("../models/User");
-const Post = require("../models/Post");
+const Job = require("../models/Job");
 
-// CREATE NEW POST
+// CREATE NEW JOB
 router.post("/", async (req, res) => {
-  const newPost = new Post(req.body);
+  const newJob = new Job((req, body));
   try {
-    const savedPost = await newPost.save();
-    res.status(200).json(savedPost);
+    const savedJob = await newJob.save();
+    res.status(200).json(savedJob);
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-// UPDATE POST
+// UPDATE JOB
 router.put("/:id", async (req, res) => {
   try {
-    const post = await Post.findById(req.params.id);
-    if (post.username === req.body.username) {
-      try {
-        const updatedPost = await Post.findByIdAndUpdate(
-          req.params.id,
-          {
-            $set: req.body,
-          },
-          { new: true }
-        );
-        res.status(200).json(updatedPost);
-      } catch (err) {
-        res.status(500).json(err);
-      }
-    } else {
-      res.status(401).json("You can update only your post");
+    const job = await Job.findById(req.params.id);
+    try {
+      const updatedJob = await Job.findByIdAndUpdate(
+        req.params.id,
+        {
+          $set: req.body,
+        },
+        { new: true }
+      );
+      res.status(200).json(updatedJob);
+    } catch (err) {
+      res.status(500).json(err);
     }
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-// DELETE POST
+// DELETE JOB
 router.delete("/:id", async (req, res) => {
   try {
-    const post = await Post.findById(req.params.id);
-    if (post.username === req.body.username) {
-      try {
-        await post.delete();
-        res.status(200).json("Post has been deleted");
-      } catch (err) {
-        res.status(500).json(err);
-      }
-    } else {
-      res.status(401).json("You can delete only your post");
+    const job = await Job.findById(req.params.id);
+
+    try {
+      await job.delete();
+      res.status(200).json("Job has been deleted");
+    } catch (err) {
+      res.status(500).json(err);
     }
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-// GET POST
+// GET JOB
 router.get("/:id", async (req, res) => {
   try {
-    const post = await Post.findById(req.params.id);
-    res.status(200).json(post);
+    const job = await Job.findById(req.params.id);
+    res.status(200).json(job);
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-// GET POSTS
+// GET JOBS
 router.get("/", async (req, res) => {
-  const username = req.query.user;
-  const catName = req.query.cat;
+  const proffesion = req.query.proffesion;
+  const specialty = req.query.specialty;
+  const location = req.query.location;
+  const shift = req.query.shift;
+  const length = req.query.length;
 
   try {
-    let posts;
+    let jobs;
 
-    if (username) {
-      posts = await Post.find({ username: username });
-    } else if (catName) {
-      posts = await Post.find({
-        categories: {
-          $in: [catName], // it basically says look in this categories array and if inside include this catName just find this and assign to posts
-        },
-      });
+    if (proffesion) {
+      jobs = await Job.find({ proffesion: proffesion });
+    } else if (specialty) {
+      jobs = await Job.find({ specialty: specialty });
+    } else if (location) {
+      jobs = await Job.find({ location: location });
+    } else if (shift) {
+      jobs = await Job.find({ shift: shift });
+    } else if (length) {
+      jobs = await Job.find({ length: length });
     } else {
       posts = await Post.find();
     }
-    res.status(200).json(posts);
+    res.status(200).json(jobs);
   } catch (err) {
     res.status(500).json(err);
   }
