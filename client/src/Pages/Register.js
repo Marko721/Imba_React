@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    height: "70vh",
+    height: "700px",
   },
   avatar: {
     margin: theme.spacing(1),
@@ -49,6 +49,7 @@ export default function Register() {
         lastName,
         email,
         password,
+        phone,
       });
       res.data && window.location.replace("/login");
     } catch (err) {
@@ -127,6 +128,19 @@ export default function Register() {
                 id="password"
                 autoComplete="current-password"
                 onChange={(e) => setPassword(e.target.value)}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                color="secondary"
+                fullWidth
+                name="phone"
+                label="Phone (optional)"
+                type="phone"
+                id="phone"
+                autoComplete="current-phone"
+                onChange={(e) => setPhone(e.target.value)}
               />
             </Grid>
           </Grid>
