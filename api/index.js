@@ -6,7 +6,7 @@ const authRoute = require("./routes/auth");
 const userRoute = require("./routes/users");
 const jobRoute = require("./routes/jobs");
 const multer = require("multer");
-const cors = require("cors");
+const cors = require("cors"); // da izbegnemo neki error u chromu koji prekida api
 
 dotenv.config();
 app.use(express.json());

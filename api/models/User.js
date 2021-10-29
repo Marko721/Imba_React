@@ -26,6 +26,11 @@ const UserSchema = new mongoose.Schema(
       required: false,
       default: "",
     },
+    jobsLiked: {
+      type: Array,
+      required: false,
+      default: [],
+    },
     // we can make createdAt and updatedAt but we use timestamps instead
   },
   { timestamps: true }
