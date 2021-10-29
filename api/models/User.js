@@ -2,7 +2,12 @@ const mongoose = require("mongoose");
 
 const UserSchema = new mongoose.Schema(
   {
-    username: {
+    firstname: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    lastname: {
       type: String,
       required: true,
       unique: true,
@@ -16,8 +21,8 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    profilePic: {
-      type: String,
+    phone: {
+      type: Number,
       default: "",
     },
     // we can make createdAt and updatedAt but we use timestamps instead
