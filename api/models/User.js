@@ -5,12 +5,10 @@ const UserSchema = new mongoose.Schema(
     firstname: {
       type: String,
       required: true,
-      unique: true,
     },
     lastname: {
       type: String,
       required: true,
-      unique: true,
     },
     email: {
       type: String,
@@ -31,7 +29,6 @@ const UserSchema = new mongoose.Schema(
       required: false,
       default: [],
     },
-    // we can make createdAt and updatedAt but we use timestamps instead
   },
   { timestamps: true }
 );
