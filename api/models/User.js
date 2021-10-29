@@ -23,6 +23,7 @@ const UserSchema = new mongoose.Schema(
     },
     phone: {
       type: Number,
+      required: false,
       default: "",
     },
     // we can make createdAt and updatedAt but we use timestamps instead
