@@ -6,9 +6,11 @@ const authRoute = require("./routes/auth");
 const userRoute = require("./routes/users");
 const jobRoute = require("./routes/jobs");
 const multer = require("multer");
+const cors = require("cors");
 
 dotenv.config();
 app.use(express.json());
+app.use(cors());
 
 mongoose
   .connect(process.env.MONGO_URL)
