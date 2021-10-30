@@ -33,8 +33,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Register() {
   const classes = useStyles();
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  const [firstname, setFirstName] = useState("");
+  const [lastname, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [phone, setPhone] = useState("");
@@ -45,8 +45,8 @@ export default function Register() {
     setError(false);
     try {
       const res = await axios.post("http://localhost:3000/api/auth/register", {
-        firstName,
-        lastName,
+        firstname,
+        lastname,
         email,
         password,
         phone,
