@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useContext, useRef } from "react";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
-import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
@@ -11,6 +10,8 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+import axios from "axios";
+import { Context } from "../Context/Context";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -37,6 +38,26 @@ const useStyles = makeStyles((theme) => ({
 export default function Login() {
   const classes = useStyles();
 
+  const userRef = useRef();
+  const passwordRef = useRef();
+  const { user, dispatch, isFetching } = useContext(Context);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    dispatch({ type: "LOGIN_START" });
+    try {
+      const res = await axios.post("http://localhost:3000/api/auth/login", {
+        username: userRef.current.value,
+        password: passwordRef.current.value,
+      });
+      dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
+    } catch (err) {
+      dispatch({ type: "LOGIN_FAILURE" });
+    }
+  };
+
+  console.log(user);
+
   return (
     <Container component="main" maxWidth="xs">
       {/* <CssBaseline /> */}
@@ -47,7 +68,7 @@ export default function Login() {
         <Typography component="h1" variant="h5">
           Log in
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} noValidate onSubmit={handleSubmit}>
           <TextField
             variant="outlined"
             color="secondary"
@@ -59,6 +80,7 @@ export default function Login() {
             name="email"
             autoComplete="email"
             autoFocus
+            ref={userRef}
           />
           <TextField
             variant="outlined"
@@ -71,6 +93,7 @@ export default function Login() {
             type="password"
             id="password"
             autoComplete="current-password"
+            ref={passwordRef}
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="secondary" />}
