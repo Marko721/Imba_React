@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Login() {
   const classes = useStyles();
 
-  const userRef = useRef();
+  const emailRef = useRef();
   const passwordRef = useRef();
   const { user, dispatch, isFetching } = useContext(Context);
 
@@ -47,7 +47,7 @@ export default function Login() {
     dispatch({ type: "LOGIN_START" });
     try {
       const res = await axios.post("http://localhost:3000/api/auth/login", {
-        username: userRef.current.value,
+        email: emailRef.current.value,
         password: passwordRef.current.value,
       });
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
@@ -80,7 +80,7 @@ export default function Login() {
             name="email"
             autoComplete="email"
             autoFocus
-            ref={userRef}
+            ref={emailRef}
           />
           <TextField
             variant="outlined"
