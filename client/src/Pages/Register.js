@@ -47,15 +47,6 @@ export default function Register() {
     setError(false);
 
     // VALIDATION
-    if (
-      firstname.length < 1 ||
-      lastname.length < 1 ||
-      email.length < 1 ||
-      password.length < 1
-    ) {
-      setError(true);
-      setErrorMessage("Please fill out all the required fields");
-    }
     if (firstname.length < 2) {
       setError(true);
       setErrorMessage("First Name must have more than 2 characters");
