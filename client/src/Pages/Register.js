@@ -81,6 +81,12 @@ export default function Register() {
       setError(true);
       setErrorMessage("Password must have more than 6 characters");
     }
+    // if (phone) {
+    //   if (!validator.isMobilePhone(phone)) {
+    //     setError(true);
+    //     setErrorMessage("Incorrect phone number");
+    //   }
+    // }
 
     if (!error) {
       try {

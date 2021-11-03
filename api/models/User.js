@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const { isEmail, isAlpha } = require("validator");
+const { isEmail, isAlpha, isMobilePhone } = require("validator");
 
 const UserSchema = new mongoose.Schema(
   {
@@ -33,6 +33,7 @@ const UserSchema = new mongoose.Schema(
       type: Number,
       required: false,
       default: "",
+      // validate: [isMobilePhone, "Incorrect phone number"],
     },
     jobsLiked: {
       type: Array,
