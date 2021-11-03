@@ -2,6 +2,33 @@ const router = require("express").Router();
 const User = require("../models/User");
 const bcrypt = require("bcrypt");
 
+// handle errors
+const handleErrors = (err) => {
+  console.log(err.message, err.code);
+  let errors = {
+    firstname: "",
+    lastname: "",
+    email: "",
+    password: "",
+    phone: "",
+  };
+
+  // duplicate error code
+  if (err.code === 11000) {
+    errors.email = "That email is already registered";
+    return errors;
+  }
+
+  // validation errors
+  if (err.message.includes("User validation failed")) {
+    Object.values(err.errors).forEach(({ properties }) => {
+      errors[properties.path] = properties.message;
+    });
+  }
+
+  return errors;
+};
+
 // REGISTER
 router.post("/register", async (req, res) => {
   try {
@@ -19,7 +46,8 @@ router.post("/register", async (req, res) => {
     const user = await newUser.save();
     res.status(200).json(user);
   } catch (err) {
-    res.status(500).json(err);
+    const errors = handleErrors(err);
+    res.status(400).json({ errors });
   }
 });
 
