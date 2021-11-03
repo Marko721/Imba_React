@@ -9,6 +9,7 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import axios from "axios";
+import validator from "validator";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -45,18 +46,58 @@ export default function Register() {
     e.preventDefault();
     setError(false);
 
-    try {
-      const res = await axios.post("http://localhost:3000/api/auth/register", {
-        firstname,
-        lastname,
-        email,
-        password,
-        phone,
-      });
-      res.data && window.location.replace("/login");
-    } catch (err) {
+    // VALIDATION
+    if (!validator.isAlpha(firstname)) {
       setError(true);
-      console.log(err);
+      setErrorMessage("First Name cannot be a number");
+    }
+    if (firstname.length < 2) {
+      setError(true);
+      setErrorMessage("First Name must have more than 2 characters");
+    }
+    if (firstname.length > 16) {
+      setError(true);
+      setErrorMessage("First Name must have less than 16 characters");
+    }
+
+    if (!validator.isAlpha(lastname)) {
+      setError(true);
+      setErrorMessage("Last Name cannot be a number");
+    }
+    if (lastname.length < 2) {
+      setError(true);
+      setErrorMessage("Last Name must have more than 2 characters");
+    }
+    if (lastname.length > 16) {
+      setError(true);
+      setErrorMessage("Last Name must have less than 16 characters");
+    }
+
+    if (!validator.isEmail(email)) {
+      setError(true);
+      setErrorMessage("Enter correct Email address");
+    }
+    if (password.length < 6) {
+      setError(true);
+      setErrorMessage("Password must have more than 6 characters");
+    }
+
+    if (!error) {
+      try {
+        const res = await axios.post(
+          "http://localhost:3000/api/auth/register",
+          {
+            firstname,
+            lastname,
+            email,
+            password,
+            phone,
+          }
+        );
+        res.data && window.location.replace("/login");
+      } catch (err) {
+        setError(true);
+      }
     }
   };
 

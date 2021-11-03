@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const { isEmail } = require("validator");
+const { isEmail, isAlpha } = require("validator");
 
 const UserSchema = new mongoose.Schema(
   {
@@ -8,12 +8,14 @@ const UserSchema = new mongoose.Schema(
       required: [true, "Please enter First Name"],
       minlength: [2, "Minimum First Name length is 2 characters"],
       maxlength: [16, "Maximum First Name length is 16 characters"],
+      validate: [isAlpha, "First Name cannot be a number"],
     },
     lastname: {
       type: String,
       required: [true, "Please enter Last Name"],
       minlength: [2, "Minimum Last Name length is 2 characters"],
       maxlength: [16, "Maximum Last Name length is 16 characters"],
+      validate: [isAlpha, "First Name cannot be a number"],
     },
     email: {
       type: String,
