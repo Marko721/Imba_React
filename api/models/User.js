@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const { isEmail, isAlpha, isMobilePhone } = require("validator");
+const bcrypt = require("bcrypt");
 
 const UserSchema = new mongoose.Schema(
   {
@@ -43,5 +44,11 @@ const UserSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
+
+UserSchema.pre("save", async function (next) {
+  const salt = await bcrypt.genSalt();
+  this.password = await bcrypt.hash(this.password, salt);
+  next();
+});
 
 module.exports = mongoose.model("User", UserSchema);
