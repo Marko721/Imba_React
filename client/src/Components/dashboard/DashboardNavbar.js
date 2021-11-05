@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { List, ListItem, ListItemText } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core";
 import { useHistory, useLocation } from "react-router";
@@ -62,6 +62,8 @@ const DashboardNavbar = () => {
   const history = useHistory();
   const location = useLocation();
 
+  const user = "user";
+
   // const user = Data.users;
 
   // const [userAdmin, setUserAdmin] = useState("");
@@ -76,22 +78,46 @@ const DashboardNavbar = () => {
 
   return (
     <List>
-      {adminLinks.map((link) => (
-        <ListItem
-          className={classes.menuLinks}
-          button
-          key={link.text}
-          onClick={() => history.push(link.path)}
-        >
-          <ListItemText
-            className={
-              location.pathname == link.path ? classes.active : classes.inactive
-            }
-            primary={link.text}
-          ></ListItemText>
-          {/* {link.text} */}
-        </ListItem>
-      ))}
+      {/* ADMIN DASHBOARD */}
+      {user === "admin" &&
+        adminLinks.map((link) => (
+          <ListItem
+            className={classes.menuLinks}
+            button
+            key={link.text}
+            onClick={() => history.push(link.path)}
+          >
+            <ListItemText
+              className={
+                location.pathname === link.path
+                  ? classes.active
+                  : classes.inactive
+              }
+              primary={link.text}
+            ></ListItemText>
+            {/* {link.text} */}
+          </ListItem>
+        ))}
+      {/* USER DASHBOARD */}
+      {user === "user" &&
+        userLinks.map((link) => (
+          <ListItem
+            className={classes.menuLinks}
+            button
+            key={link.text}
+            onClick={() => history.push(link.path)}
+          >
+            <ListItemText
+              className={
+                location.pathname === link.path
+                  ? classes.active
+                  : classes.inactive
+              }
+              primary={link.text}
+            ></ListItemText>
+            {/* {link.text} */}
+          </ListItem>
+        ))}
     </List>
   );
 };

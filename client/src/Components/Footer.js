@@ -1,19 +1,16 @@
 import React from "react";
 import {
   makeStyles,
-  Paper,
   Typography,
   Grid,
   Container,
   Divider,
   Link,
-  Box,
 } from "@material-ui/core";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import { useHistory, useLocation } from "react-router";
+import { useHistory } from "react-router";
 import LogoWhite from "./Images/logo_white.png";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
@@ -54,7 +51,6 @@ const useStyles = makeStyles((theme) => ({
 const Footer = ({ mobileView }) => {
   const classes = useStyles();
   const history = useHistory();
-  const location = useLocation();
 
   // MENU LIST ITEMS
   const menuItems = [
@@ -173,7 +169,11 @@ const Footer = ({ mobileView }) => {
 
           {/* LOGO Info */}
           <Grid item xs={12} sm={6} md={3}>
-            <img src={LogoWhite} className={classes.logo} />
+            <img
+              src={LogoWhite}
+              alt="imba logo white"
+              className={classes.logo}
+            />
           </Grid>
         </Grid>
 

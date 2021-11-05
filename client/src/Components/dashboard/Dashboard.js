@@ -21,8 +21,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const adminLinks = [];
-const userLinks = [];
+// const adminLinks = [];
+// const userLinks = [];
 
 const Dashboard = ({ children }) => {
   const classes = useStyles();
