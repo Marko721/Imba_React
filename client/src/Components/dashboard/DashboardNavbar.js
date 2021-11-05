@@ -62,7 +62,7 @@ const DashboardNavbar = () => {
   const history = useHistory();
   const location = useLocation();
 
-  const user = "user";
+  const user = "admin";
 
   // const user = Data.users;
 

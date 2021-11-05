@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const User = require("../models/User");
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
 // handle errors
 const handleErrors = (err) => {
@@ -29,6 +30,14 @@ const handleErrors = (err) => {
   return errors;
 };
 
+// create json web token
+const maxAge = 3 * 24 * 60 * 60;
+const createToken = (id) => {
+  return jwt.sign({ id }, "imba health secret", {
+    expiresIn: maxAge,
+  });
+};
+
 // REGISTER
 router.post("/register", async (req, res) => {
   try {
@@ -41,6 +50,8 @@ router.post("/register", async (req, res) => {
     });
 
     const user = await newUser.save();
+    const token = createToken(user._id);
+    res.cookie("jwt", token, { httpOnly: true, maxAge: maxAge * 1000 });
     res.status(200).json(user);
   } catch (err) {
     const errors = handleErrors(err);
