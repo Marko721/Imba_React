@@ -52,10 +52,10 @@ router.post("/register", async (req, res) => {
 router.post("/login", async (req, res) => {
   try {
     const user = await User.findOne({ email: req.body.email });
-    !user && res.status(400).json("Wrong credentials!");
+    // !user && res.status(400).json("Wrong credentials!");
 
     const validated = await bcrypt.compare(req.body.password, user.password);
-    !validated && res.status(400).json("Wrong credentials!");
+    // !validated && res.status(400).json("Wrong credentials!");
 
     const { password, ...others } = user._doc; // we did this to separate password from other properties so json will return everything but the password in postman
     res.status(200).json(others);

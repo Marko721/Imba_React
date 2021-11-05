@@ -176,7 +176,6 @@ export default function Register() {
                 label="Password"
                 type="password"
                 id="password"
-                autoComplete="current-password"
                 onChange={(e) => setPassword(e.target.value)}
               />
             </Grid>
