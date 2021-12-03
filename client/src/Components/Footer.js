@@ -147,10 +147,10 @@ const Footer = ({ mobileView }) => {
               <Typography className={classes.title} style={{ marginTop: 10 }}>
                 office@imbahealth.com
               </Typography>
-              <Typography className={classes.title}>+1 218 269 5391</Typography>
-              <Typography className={classes.title}>+1 833 532 2059</Typography>
+              <Typography className={classes.title}>+1 111 222 3333</Typography>
+              <Typography className={classes.title}>+1 222 333 4444</Typography>
               <Typography className={classes.title}>
-                17350 State Hwy 249, Ste 220 #5768, Houston TX 77096
+                11234 State Hwy 333, Ste 2221 #3242, Houston TX 77096
               </Typography>
               <div className={classes.iconsList}>
                 <ListItem key="facebook" button>
